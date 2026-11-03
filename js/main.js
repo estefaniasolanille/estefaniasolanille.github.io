@@ -24,7 +24,7 @@ if (!('IntersectionObserver' in window)) {
 
 // ---------- Dock flotante (páginas de proyecto) ----------
 // Se arma acá para no repetir el mismo HTML en cada página.
-// Para agregar el CV: sumá { href: 'cv.pdf', label: 'CV', download: true } a DOCK_EXTRA.
+// Links extra al final de la barra. blank: true lo abre en otra pestaña.
 const DOCK_PROJECTS = [
   { href: 'molecular.html', label: 'MoleculAR', color: '#278BFB' },
   { href: 'anfibia.html', label: 'Anfibia', color: '#D7F04A' },
@@ -32,7 +32,9 @@ const DOCK_PROJECTS = [
   { href: 'infografia.html', label: 'Infografía', color: '#F2C230' },
   { href: 'lyro.html', label: 'Lyro', color: '#FF7A3D' },
 ];
-const DOCK_EXTRA = [];
+const DOCK_EXTRA = [
+  { href: 'cv-estefania-solanille.pdf', label: 'CV', blank: true },
+];
 
 if (document.body.classList.contains('page-case')) {
   const here = location.pathname.split('/').pop();
@@ -45,7 +47,7 @@ if (document.body.classList.contains('page-case')) {
     <a class="round" href="index.html" aria-label="Ir al escritorio" title="Escritorio">${icon('<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/>')}</a>
     <span class="sep" aria-hidden="true"></span>
     ${DOCK_PROJECTS.map((p) => `<a class="proj" href="${p.href}" style="--c:${p.color}" title="${p.label}"${p.href === here ? ' aria-current="page"' : ''}><span>${p.label}</span></a>`).join('')}
-    ${DOCK_EXTRA.map((e) => `<a href="${e.href}"${e.download ? ' download' : ''}>${e.label}</a>`).join('')}`;
+    ${DOCK_EXTRA.map((e) => `<a href="${e.href}"${e.blank ? ' target="_blank" rel="noopener"' : ''}>${e.label}</a>`).join('')}`;
   document.body.appendChild(dock);
 }
 
