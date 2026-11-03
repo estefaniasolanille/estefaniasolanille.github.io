@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estefanía Solanille · Portfolio</title>
+  <meta name="description" content="Portfolio de Estefanía Solanille: diseño UX/UI, desarrollo web y mobile y videojuegos. La Plata, Argentina.">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=31">
+</head>
+<body class="page-home">
+
+  <!-- Menú alternativo: siempre visible, para quien no quiera explorar la escena -->
+  <header class="topbar">
+    <a href="#inicio" class="logo">ES</a>
+    <nav aria-label="Secciones">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- ESCENA: el escritorio -->
+  <section id="inicio" class="scene-wrap">
+    <div class="scene" id="scene">
+      <!-- .scene hace el zoom al hacer clic; .scene-inner se mueve apenas con el mouse -->
+      <div class="scene-inner" id="scene-inner">
+        <img src="img/escritorio.jpg" alt="Escritorio con laptop, monitor, celular, una PlayStation 2, auriculares y un cuaderno con wireframes" width="1376" height="768">
+        <div class="sunlight" aria-hidden="true"></div>
+        <canvas class="dust" id="dust" aria-hidden="true"></canvas>
+
+        <!-- Texto dentro del monitor -->
+        <div class="monitor-screen" aria-hidden="true">
+          <p class="hello">Hola, soy</p>
+          <p class="name" id="typed-name">Estefanía Solanille</p>
+          <p class="role">Diseño UX/UI · Web &amp; Mobile</p>
+          <p class="hint">Hacé clic en los objetos <span class="blink">▍</span></p>
+        </div>
+
+        <!-- Zonas clickeables. Coordenadas en píxeles de la imagen (1376×768).
+             data-pin es donde va la etiqueta que se ve en el celular.
+             Las que van a otra página (.html) hacen zoom antes de navegar. -->
+        <svg class="hotspots" viewBox="0 0 1376 768" preserveAspectRatio="none">
+          <a href="anfibia.html" class="hs" data-label="Proyectos web" data-short="Web" data-pin="660,395">
+            <polygon points="602,334 772,348 768,458 812,478 742,528 556,500 604,458" />
+          </a>
+          <a href="molecular.html" class="hs" data-label="MoleculAR · Tesis" data-short="MoleculAR" data-pin="915,600">
+            <polygon points="905,490 945,496 940,560 958,572 922,602 864,585 872,566 890,560" />
+          </a>
+          <a href="lyro.html" class="hs" data-label="La odisea de Lyro" data-short="Lyro" data-pin="530,330">
+            <polygon points="500,226 578,220 626,300 626,420 540,425 540,500 436,495 440,445 500,420" />
+          </a>
+          <a href="#proceso" class="hs" data-label="Cómo trabajo" data-short="Proceso" data-pin="720,640">
+            <polygon points="568,550 884,560 888,640 820,730 538,690" />
+          </a>
+          <a href="#sobre-mi" class="hs" data-label="Sobre mí" data-short="Sobre mí" data-pin="1240,240">
+            <polygon points="1240,185 1330,190 1328,296 1238,290" />
+          </a>
+          <a href="#contacto" class="hs" data-label="Contacto" data-short="Contacto" data-pin="800,465">
+            <polygon points="762,476 787,471 812,476 818,505 818,530 806,540 786,542 766,533 761,505" />
+          </a>
+        </svg>
+      </div>
+      <div class="tooltip" id="tooltip" role="status"></div>
+    </div>
+    <div class="zoom-fade" aria-hidden="true"></div>
+  </section>
+
+  <div class="mobile-intro">
+    <p class="role">Diseño UX/UI · Web &amp; Mobile</p>
+    <p>Tocá los objetos del escritorio o usá el menú de arriba.</p>
+  </div>
+
+  <main>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="section">
+      <p class="eyebrow">Lo que hice</p>
+      <h2>Proyectos</h2>
+      <div class="projects">
+        <a class="project featured reveal" href="molecular.html">
+          <div class="project-img"><img src="img/molecular/molecula-geometria.jpg" alt="" loading="lazy"></div>
+          <div class="project-body">
+            <p class="tag">Tesis · App de realidad aumentada</p>
+            <h3>MoleculAR</h3>
+            <p>Apuntás la cámara a una fórmula escrita a mano y aparece la molécula en 3D.</p>
+            <span class="more">Ver caso →</span>
+          </div>
+        </a>
+        <a class="project reveal" href="anfibia.html">
+          <div class="project-img"><img src="img/proyectos/anfibia-home.jpg" alt="" loading="lazy"></div>
+          <div class="project-body">
+            <p class="tag">Rediseño web · 2021</p>
+            <h3>Revista Anfibia</h3>
+            <p>Un medio real, con menos clics para llegar a cada nota.</p>
+            <span class="more">Ver caso →</span>
+          </div>
+        </a>
+        <a class="project reveal" href="nutri-recetas.html">
+          <div class="project-img"><img src="img/proyectos/nutri-home.jpg" alt="" loading="lazy"></div>
+          <div class="project-body">
+            <p class="tag">Landing page · 2024</p>
+            <h3>Nutri Recetas</h3>
+            <p>Una marca de cocina inventada desde cero, pensada para convertir.</p>
+            <span class="more">Ver caso →</span>
+          </div>
+        </a>
+        <a class="project reveal" href="infografia.html">
+          <div class="project-img"><img src="img/proyectos/juegos-sin-texto-poster.jpg" alt="" loading="lazy"></div>
+          <div class="project-body">
+            <p class="tag">Infografía interactiva · p5.js · 2025</p>
+            <h3>Infografía interactiva</h3>
+            <p>Seis conceptos de sistemas complejos explicados con juguetes, sin texto.</p>
+            <span class="more">Ver caso →</span>
+          </div>
+        </a>
+        <a class="project reveal" href="lyro.html">
+          <div class="project-img"><img src="img/lyro/portada.jpg" alt="" loading="lazy"></div>
+          <div class="project-body">
+            <p class="tag">Videojuego · Unity</p>
+            <h3>La odisea de Lyro</h3>
+            <p>Un dragón, tres islas y dos finales posibles.</p>
+            <span class="more">Ver caso →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- PROCESO (el cuaderno) -->
+    <section id="proceso" class="section">
+      <h2>Cómo trabajo</h2>
+      <ol class="process">
+        <li class="reveal"><span>01</span><h3>Investigar</h3><p>Benchmark, user personas y entender qué le cuesta a quien va a usar el producto.</p></li>
+        <li class="reveal"><span>02</span><h3>Ordenar</h3><p>Arquitectura de la información y flujos: qué va primero y cómo se llega.</p></li>
+        <li class="reveal"><span>03</span><h3>Prototipar</h3><p>Wireframes y prototipos en Figma, para probar antes de construir.</p></li>
+        <li class="reveal"><span>04</span><h3>Construir</h3><p>Lo desarrollo yo, así el diseño llega igual al producto final.</p></li>
+      </ol>
+    </section>
+
+    <!-- SOBRE MÍ (el cuadro) -->
+    <section id="sobre-mi" class="section about reveal">
+      <div class="photo"><img src="img/foto.jpg" alt="Foto de Estefanía Solanille" loading="lazy"></div>
+      <div>
+        <h2>Sobre mí</h2>
+        <p class="lead">Soy estudiante avanzada de la Licenciatura en Diseño Multimedial en la Facultad de Artes (UNLP) y estoy haciendo mi tesis sobre realidad aumentada aplicada a la educación. Me interesa el diseño de interacción con foco en el usuario, y también hago videojuegos.</p>
+        <div class="skill-groups">
+          <div><h3>UX/UI</h3><p>Figma · Prototipado · Benchmark · User personas · Arquitectura de la información</p></div>
+          <div><h3>Videojuegos</h3><p>Unity · Programación de mecánicas</p></div>
+          <div><h3>Gráfico y audiovisual</h3><p>Photoshop · Affinity · Premiere Pro</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO (la taza) -->
+    <section id="contacto" class="section contact reveal">
+      <h2>¿Charlamos?</h2>
+      <p class="lead center">La Plata, Buenos Aires</p>
+      <div class="links big">
+        <a href="mailto:estefania_solanille@hotmail.com">estefania_solanille@hotmail.com</a>
+        <a href="https://linkedin.com/in/estefania-solanille" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://behance.net/maddisonalexrose" target="_blank" rel="noopener">Behance</a>
+        <a href="#" class="todo-link">CV (PDF)</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>Estefanía Solanille · 2026</footer>
+
+  <script src="js/main.js?v=31"></script>
+</body>
+</html>

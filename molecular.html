@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MoleculAR · Estefanía Solanille</title>
+  <meta name="description" content="MoleculAR: app de realidad aumentada que convierte fórmulas químicas escritas a mano en moléculas 3D. Tesis de grado de Estefanía Solanille.">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=34">
+</head>
+<body class="page-case theme-molecular">
+
+  <header class="topbar">
+    <a href="index.html" class="logo">ES</a>
+    <nav aria-label="Secciones">
+      <a href="index.html#proyectos">Proyectos</a>
+      <a href="index.html#proceso">Proceso</a>
+      <a href="index.html#sobre-mi">Sobre mí</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main class="case-page">
+    <a class="back" href="index.html#proyectos">← Volver al escritorio</a>
+
+    <header class="case-head">
+      <p class="eyebrow">Tesis de grado · App de realidad aumentada</p>
+      <h1>MoleculAR</h1>
+      <p class="lead">Una app para estudiantes de secundario: apuntás la cámara a una fórmula escrita a mano en el cuaderno y aparece la molécula en 3D, lista para girarla y explorarla.</p>
+      <div class="ficha">
+        <span class="tape" aria-hidden="true"></span>
+        <p class="ficha-title">Ficha del proyecto</p>
+        <dl class="ficha-fields">
+          <div><dt>Proyecto</dt><dd>MoleculAR</dd></div>
+          <div><dt>Contexto</dt><dd>Tesis de grado · Lic. en Diseño Multimedial (UNLP)</dd></div>
+          <div><dt>Equipo</dt><dd>Individual</dd></div>
+          <div><dt>Tecnología</dt><dd>Unity · Gemini · PubChem · Figma</dd></div>
+          <div><dt>Estado</dt><dd>En desarrollo</dd></div>
+        </dl>
+        <div class="ficha-checks"><span class="ficha-label">Tipo:</span><span class="check on">App</span><span class="check">Web</span><span class="check">Juego</span><span class="check on">Realidad aumentada</span></div>
+        <div class="ficha-checks"><span class="ficha-label">Hice:</span><span class="check on">Investigación</span><span class="check on">UX/UI</span><span class="check on">Desarrollo</span></div>
+      </div>
+    </header>
+
+    <!-- Video real de la app: escaneo (vertical) y exploración de la molécula (horizontal) -->
+    <div class="ar-intro reveal">
+      <figure class="phone">
+        <video class="demo-video" src="video/molecular-escaneo.mp4?v=2" poster="img/molecular/escaneo-poster.jpg?v=2" autoplay muted loop playsinline aria-label="La cámara de MoleculAR escaneando H2O escrito a mano en un cuaderno"></video>
+        <figcaption>1 · Apuntás al cuaderno y escanea la fórmula</figcaption>
+      </figure>
+      <figure>
+        <video class="demo-video" src="video/molecular-demo.mp4?v=2" poster="img/molecular/demo-poster.jpg?v=2" autoplay muted loop playsinline aria-label="El agua en 3D sobre el cuaderno: se giran los átomos y se tocan las fichas de peso, estado, enlaces y geometría"></video>
+        <figcaption>2 · Aparece la molécula en 3D y la explorás tocando átomos y fichas</figcaption>
+      </figure>
+    </div>
+
+    <section class="case-block reveal">
+      <h2>El problema</h2>
+      <p>Siempre me gustó la química, pero me costaba: una fórmula como H₂O es una abstracción, y hay que imaginar en 3D algo que solo ves escrito en 2D. Quise hacer la herramienta que me hubiera servido a mí.</p>
+    </section>
+
+    <section class="reveal">
+      <h2 class="gallery-title">Cada dato se puede ver, no solo leer</h2>
+      <p class="gallery-lead">Al tocar una ficha, la molécula cambia para mostrar ese concepto.</p>
+      <div class="gallery three">
+        <figure class="taped"><img src="img/molecular/molecula-estado.jpg" alt="Varias moléculas de agua flotando alrededor para representar el estado líquido" loading="lazy"><figcaption><strong>Estado:</strong> aparecen más moléculas moviéndose como en un líquido</figcaption></figure>
+        <figure class="taped"><img src="img/molecular/molecula-enlaces.jpg" alt="Enlaces del agua marcados con cargas parciales delta" loading="lazy"><figcaption><strong>Enlaces:</strong> se marcan los enlaces y las cargas parciales (δ+ y δ−)</figcaption></figure>
+        <figure class="taped"><img src="img/molecular/molecula-geometria.jpg" alt="Arco amarillo que muestra el ángulo de 104 grados entre los hidrógenos" loading="lazy"><figcaption><strong>Geometría:</strong> se dibuja el ángulo de 104° entre los hidrógenos</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="case-block reveal">
+      <h2>De un prototipo a cualquier molécula</h2>
+      <aside class="postit">Teachable Machine → Gemini + PubChem: de unas pocas moléculas a cualquiera</aside>
+      <p>La primera versión usaba un modelo entrenado en Teachable Machine, que solo reconocía las moléculas con las que lo había entrenado. Para que funcionara con cualquier fórmula, conecté la app a internet: Gemini lee lo escrito a mano y PubChem devuelve los datos reales de la molécula.</p>
+    </section>
+
+    <section class="case-block reveal">
+      <h2>Decisiones de diseño</h2>
+      <p>La cámara ocupa toda la pantalla para que el cuaderno sea el protagonista, y los controles quedan abajo, al alcance del pulgar. Los datos no son solo texto: cada ficha activa una visualización en 3D. Todo se conecta (molécula → átomo → tabla periódica) para que se pueda explorar sin perderse, y el tamaño del texto es ajustable.</p>
+    </section>
+
+    <!-- El resto de las pantallas, barajándose en un panel en vez de una galería larga -->
+    <div class="bento reveal">
+      <div class="bento-text">
+        <h2>Explorar y estudiar</h2>
+        <ul>
+          <li><strong>Del átomo a la tabla:</strong> tocás un átomo de la molécula y llegás a su ficha y a su lugar en la tabla periódica, con la estructura de Lewis.</li>
+          <li><strong>Tabla periódica:</strong> el color indica la categoría y el borde, el estado a 25 °C.</li>
+          <li><strong>Diccionario:</strong> como mapa conceptual o como lista con buscador.</li>
+          <li><strong>Accesibilidad:</strong> tamaño de texto ajustable.</li>
+        </ul>
+      </div>
+      <div class="shuffle" tabindex="0" role="button" aria-label="Ver la siguiente pantalla">
+        <figure class="shuffle-card" data-label="Átomo en la tabla periódica"><img src="img/molecular/elemento-tabla.jpg" alt="Tabla periódica con el oxígeno resaltado y su estructura de Lewis"></figure>
+        <figure class="shuffle-card" data-label="Propiedades del átomo"><img src="img/molecular/molecula-atomo.jpg" alt="Oxígeno seleccionado dentro de la molécula, con masa atómica, electronegatividad y radio"></figure>
+        <figure class="shuffle-card" data-label="Ficha del elemento"><img src="img/molecular/elemento.jpg" alt="Ficha completa del oxígeno con número atómico y propiedades"></figure>
+        <figure class="shuffle-card" data-label="Tabla periódica"><img src="img/molecular/tabla-periodica.jpg" alt="Tabla periódica con colores por categoría y estilos por estado"></figure>
+        <figure class="shuffle-card" data-label="Diccionario: mapa"><img src="img/molecular/diccionario-mapa.jpg" alt="Diccionario como mapa conceptual de enlace químico"></figure>
+        <figure class="shuffle-card" data-label="Diccionario: lista"><img src="img/molecular/diccionario-lista.jpg" alt="Diccionario en formato lista con buscador"></figure>
+        <figure class="shuffle-card" data-label="Configuración"><img src="img/molecular/configuracion.jpg" alt="Configuración con tamaño de texto, historial y búsqueda por fórmula"></figure>
+        <span class="shuffle-label"></span>
+        <div class="shuffle-dots" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <div class="case-grid reveal">
+      <article>
+        <h3>Pruebas con usuarios</h3>
+        <p>La probé con amigos y familia mientras la desarrollaba. Dos de ellas saben química y me ayudaron a ajustar la terminología y la información de cada ficha para que fuera correcta.</p>
+      </article>
+      <article>
+        <h3>Lo que aprendí</h3>
+        <p>Era la primera vez que programaba realidad aumentada desde cero, y al principio me pareció demasiado ambicioso para una tesis. Funcionó, y me enseñó a iterar: probar, ver qué falla y cambiar de enfoque.</p>
+      </article>
+    </div>
+
+    <a class="next-project reveal" href="anfibia.html">
+      <div class="game-case" aria-hidden="true"><span class="game-case-band">Siguiente</span><img src="img/proyectos/anfibia-home.jpg" alt="" loading="lazy"></div>
+      <div class="next-text"><span>Siguiente proyecto</span><strong>Revista Anfibia →</strong></div>
+    </a>
+  </main>
+
+  <footer>Estefanía Solanille · 2026</footer>
+  <script src="js/main.js?v=34"></script>
+</body>
+</html>
