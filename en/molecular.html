@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MoleculAR · Estefania Solanille</title>
+  <meta name="description" content="MoleculAR: an augmented reality app that turns handwritten chemical formulas into 3D molecules. Undergraduate thesis by Estefania Solanille.">
+  <link rel="alternate" hreflang="es" href="https://estefaniasolanille.github.io/molecular.html">
+  <link rel="alternate" hreflang="en" href="https://estefaniasolanille.github.io/en/molecular.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+  <!-- Vista previa al compartir el link (WhatsApp, LinkedIn, mail) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://estefaniasolanille.github.io/en/molecular.html">
+  <meta property="og:title" content="MoleculAR · Estefania Solanille">
+  <meta property="og:description" content="MoleculAR: an augmented reality app that turns handwritten chemical formulas into 3D molecules. Undergraduate thesis by Estefania Solanille.">
+  <meta property="og:image" content="https://estefaniasolanille.github.io/img/og-portada.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css?v=36">
+</head>
+<body class="page-case theme-molecular">
+
+  <header class="topbar">
+    <a href="index.html" class="logo">ES</a>
+    <nav aria-label="Sections">
+      <a href="index.html#proyectos">Projects</a>
+      <a href="index.html#proceso">Process</a>
+      <a href="index.html#sobre-mi">About</a>
+      <a href="index.html#contacto">Contact</a>
+      <a class="lang" href="../molecular.html" hreflang="es" lang="es" aria-label="Versión en español">ES</a>
+    </nav>
+  </header>
+
+  <main class="case-page">
+    <a class="back" href="index.html#proyectos">← Back to the desk</a>
+
+    <header class="case-head">
+      <p class="eyebrow">Undergraduate thesis · Augmented reality app</p>
+      <h1>MoleculAR</h1>
+      <p class="lead">An app for high school students: point the camera at a formula handwritten in your notebook and the molecule appears in 3D, ready to rotate and explore.</p>
+      <div class="ficha">
+        <span class="tape" aria-hidden="true"></span>
+        <p class="ficha-title">Project details</p>
+        <dl class="ficha-fields">
+          <div><dt>Project</dt><dd>MoleculAR</dd></div>
+          <div><dt>Context</dt><dd>Undergraduate thesis · B.A. in Multimedia Design (UNLP)</dd></div>
+          <div><dt>Team</dt><dd>Solo</dd></div>
+          <div><dt>Tech</dt><dd>Unity · Gemini · PubChem · Figma</dd></div>
+          <div><dt>Status</dt><dd>In progress</dd></div>
+        </dl>
+        <div class="ficha-checks"><span class="ficha-label">Type:</span><span class="check on">App</span><span class="check">Web</span><span class="check">Game</span><span class="check on">Augmented reality</span></div>
+        <div class="ficha-checks"><span class="ficha-label">I did:</span><span class="check on">Research</span><span class="check on">UX/UI</span><span class="check on">Development</span></div>
+      </div>
+    </header>
+
+    <!-- Video real de la app: escaneo (vertical) y exploración de la molécula (horizontal) -->
+    <div class="ar-intro reveal">
+      <figure class="phone">
+        <video class="demo-video" src="../video/molecular-escaneo.mp4?v=2" poster="../img/molecular/escaneo-poster.jpg?v=2" autoplay muted loop playsinline aria-label="The MoleculAR camera scanning H2O handwritten in a notebook"></video>
+        <figcaption>1 · Point at the notebook and it scans the formula</figcaption>
+      </figure>
+      <figure>
+        <video class="demo-video" src="../video/molecular-demo.mp4?v=2" poster="../img/molecular/demo-poster.jpg?v=2" autoplay muted loop playsinline aria-label="Water in 3D over the notebook: the atoms are rotated and the weight, state, bond and geometry cards are tapped"></video>
+        <figcaption>2 · The molecule appears in 3D and you explore it by tapping atoms and cards</figcaption>
+      </figure>
+    </div>
+
+    <section class="case-block reveal">
+      <h2>The problem</h2>
+      <p>I always liked chemistry, but I found it hard: a formula like H₂O is an abstraction, and you have to imagine in 3D something you only see written in 2D. I wanted to build the tool that would have helped me.</p>
+    </section>
+
+    <section class="reveal">
+      <h2 class="gallery-title">Every fact can be seen, not just read</h2>
+      <p class="gallery-lead">Tap a card and the molecule changes to show that concept.</p>
+      <div class="gallery three">
+        <figure class="taped"><img src="../img/molecular/molecula-estado.jpg" alt="Several water molecules floating around to represent the liquid state" loading="lazy"><figcaption><strong>State:</strong> more molecules appear, moving like in a liquid</figcaption></figure>
+        <figure class="taped"><img src="../img/molecular/molecula-enlaces.jpg" alt="Water bonds marked with partial delta charges" loading="lazy"><figcaption><strong>Bonds:</strong> the bonds and partial charges (δ+ and δ−) are highlighted</figcaption></figure>
+        <figure class="taped"><img src="../img/molecular/molecula-geometria.jpg" alt="Yellow arc showing the 104-degree angle between the hydrogens" loading="lazy"><figcaption><strong>Geometry:</strong> the 104° angle between the hydrogens is drawn</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="case-block reveal">
+      <h2>From a prototype to any molecule</h2>
+      <aside class="postit">Teachable Machine → Gemini + PubChem: from a few molecules to any of them</aside>
+      <p>The first version used a model trained in Teachable Machine, which only recognized the molecules I had trained it with. To make it work with any formula, I connected the app to the internet: Gemini reads the handwriting and PubChem returns the molecule's real data.</p>
+    </section>
+
+    <section class="case-block reveal">
+      <h2>Design decisions</h2>
+      <p>The camera fills the whole screen so the notebook takes center stage, and the controls sit at the bottom, within thumb reach. The data isn't just text: each card triggers a 3D visualization. Everything is connected (molecule → atom → periodic table) so you can explore without getting lost, and the text size is adjustable.</p>
+    </section>
+
+    <!-- El resto de las pantallas, barajándose en un panel en vez de una galería larga -->
+    <div class="bento reveal">
+      <div class="bento-text">
+        <h2>Explore and study</h2>
+        <ul>
+          <li><strong>From atom to table:</strong> tap an atom in the molecule to reach its card and its place in the periodic table, with its Lewis structure.</li>
+          <li><strong>Periodic table:</strong> the color shows the category, and the border, the state at 25 °C.</li>
+          <li><strong>Dictionary:</strong> as a concept map or as a searchable list.</li>
+          <li><strong>Accessibility:</strong> adjustable text size.</li>
+        </ul>
+      </div>
+      <div class="shuffle" tabindex="0" role="button" aria-label="Show the next screen">
+        <figure class="shuffle-card" data-label="Atom in the periodic table"><img src="../img/molecular/elemento-tabla.jpg" alt="Periodic table with oxygen highlighted and its Lewis structure"></figure>
+        <figure class="shuffle-card" data-label="Atom properties"><img src="../img/molecular/molecula-atomo.jpg" alt="Oxygen selected inside the molecule, with atomic mass, electronegativity and radius"></figure>
+        <figure class="shuffle-card" data-label="Element card"><img src="../img/molecular/elemento.jpg" alt="Full oxygen card with atomic number and properties"></figure>
+        <figure class="shuffle-card" data-label="Periodic table"><img src="../img/molecular/tabla-periodica.jpg" alt="Periodic table with colors by category and styles by state"></figure>
+        <figure class="shuffle-card" data-label="Dictionary: map"><img src="../img/molecular/diccionario-mapa.jpg" alt="Dictionary as a concept map of chemical bonding"></figure>
+        <figure class="shuffle-card" data-label="Dictionary: list"><img src="../img/molecular/diccionario-lista.jpg" alt="Dictionary as a searchable list"></figure>
+        <figure class="shuffle-card" data-label="Settings"><img src="../img/molecular/configuracion.jpg" alt="Settings with text size, history and search by formula"></figure>
+        <span class="shuffle-label"></span>
+        <div class="shuffle-dots" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <div class="case-grid reveal">
+      <article>
+        <h3>User testing</h3>
+        <p>I tested it with friends and family while developing it. Two of them know chemistry and helped me fine-tune the terminology and the information on each card so it was accurate.</p>
+      </article>
+      <article>
+        <h3>What I learned</h3>
+        <p>It was my first time programming augmented reality from scratch, and at first it felt too ambitious for a thesis. It worked, and it taught me to iterate: test, see what fails and change approach.</p>
+      </article>
+    </div>
+
+    <a class="next-project reveal" href="anfibia.html">
+      <div class="game-case" aria-hidden="true"><span class="game-case-band">Next</span><img src="../img/proyectos/anfibia-home.jpg" alt="" loading="lazy"></div>
+      <div class="next-text"><span>Next project</span><strong>Revista Anfibia →</strong></div>
+    </a>
+  </main>
+
+  <footer>Estefania Solanille · 2026</footer>
+  <script src="../js/main.js?v=36"></script>
+</body>
+</html>

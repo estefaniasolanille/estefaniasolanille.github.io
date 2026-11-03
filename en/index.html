@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estefania Solanille · Portfolio</title>
+  <meta name="description" content="Portfolio of Estefania Solanille: UX/UI design, web and mobile development, and video games. La Plata, Argentina.">
+  <link rel="alternate" hreflang="es" href="https://estefaniasolanille.github.io/">
+  <link rel="alternate" hreflang="en" href="https://estefaniasolanille.github.io/en/">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+  <!-- Vista previa al compartir el link (WhatsApp, LinkedIn, mail) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://estefaniasolanille.github.io/en/">
+  <meta property="og:title" content="Estefania Solanille · Portfolio">
+  <meta property="og:description" content="Portfolio of Estefania Solanille: UX/UI design, web and mobile development, and video games. La Plata, Argentina.">
+  <meta property="og:image" content="https://estefaniasolanille.github.io/img/og-portada.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css?v=36">
+</head>
+<body class="page-home">
+
+  <!-- Menú alternativo: siempre visible, para quien no quiera explorar la escena -->
+  <header class="topbar">
+    <a href="#inicio" class="logo">ES</a>
+    <nav aria-label="Sections">
+      <a href="#proyectos">Projects</a>
+      <a href="#proceso">Process</a>
+      <a href="#sobre-mi">About</a>
+      <a href="#contacto">Contact</a>
+      <a class="lang" href="../index.html" hreflang="es" lang="es" aria-label="Versión en español">ES</a>
+    </nav>
+  </header>
+
+  <!-- ESCENA: el escritorio -->
+  <section id="inicio" class="board-wrap">
+    <!-- Collage: cada objeto es un recorte (img/collage/) ubicado donde estaba en la foto del escritorio.
+         Posiciones en % del tablero: --x --y --w en compu, --mx --my --mw en celular. Los .deco son decoración. -->
+    <div class="board" id="board">
+      <span class="st deco" style="--x:44.81%;--y:1.24%;--w:10.54%;--r:-4deg;--i:0;--mx:4%;--my:2%;--mw:27%"><img src="../img/collage/arte.png" alt=""></span>
+      <span class="st deco m-hide" style="--x:44.63%;--y:12.17%;--w:10.1%;--r:3deg;--i:1"><img src="../img/collage/arte2.png" alt=""></span>
+      <span class="st deco" style="--x:54.31%;--y:6.71%;--w:5.52%;--r:-6deg;--i:2;--mx:34%;--my:4%;--mw:12%"><img src="../img/collage/pola1.png" alt=""></span>
+      <span class="st deco m-hide" style="--x:57.73%;--y:8.01%;--w:6.61%;--r:7deg;--i:3"><img src="../img/collage/pola2.png" alt=""></span>
+      <span class="st deco m-hide" style="--x:65.68%;--y:8.01%;--w:12.28%;--r:2deg;--i:4"><img src="../img/collage/boceto.png" alt=""></span>
+      <span class="st deco m-hide" style="--x:74.83%;--y:36.13%;--w:6.61%;--r:-5deg;--i:5"><img src="../img/collage/pola3.png" alt=""></span>
+      <a class="st" href="#sobre-mi" style="--x:77.59%;--y:20.64%;--w:8.94%;--r:3deg;--i:6;--mx:73%;--my:3%;--mw:22%"><img src="../img/collage/cuadro.png" alt=""><span class="dymo">About me</span></a>
+      <span class="table" aria-hidden="true"><span></span></span>
+      <div class="name-card" style="--x:41%;--y:27%;--w:21.5%;--r:-1.5deg;--mx:31%;--my:14%;--mw:65%">
+        <span class="tape" aria-hidden="true"></span>
+        <p class="hello">Hi, I'm</p>
+        <h1>Estefania Solanille</h1>
+        <p class="role">UX/UI Design · Web &amp; Mobile</p>
+      </div>
+      <span class="st deco m-hide" style="--x:7.81%;--y:61.13%;--w:15.55%;--r:2deg;--i:7"><img src="../img/collage/libros.png" alt=""></span>
+      <a class="st" href="lyro.html" style="--x:18.63%;--y:25.33%;--w:11.41%;--r:-2deg;--i:8;--mx:4%;--my:19%;--mw:24%"><img src="../img/collage/ps2.png" alt=""><span class="dymo top">Games</span></a>
+      <span class="st deco" style="--x:13.59%;--y:53.84%;--w:9.67%;--r:-8deg;--i:9;--mx:3%;--my:76%;--mw:20%"><img src="../img/collage/mando.png" alt=""></span>
+      <a class="st front" href="anfibia.html" style="--x:23.44%;--y:40.17%;--w:18.02%;--r:1.5deg;--i:10;--mx:10%;--my:47%;--mw:54%"><img src="../img/collage/laptop.png" alt=""><span class="dymo">Web projects</span></a>
+      <a class="st front" href="#contacto" style="--x:39.4%;--y:58.01%;--w:6.25%;--r:-5deg;--i:11;--mx:66%;--my:46%;--mw:15%"><img src="../img/collage/taza.png" alt=""><span class="dymo">Contact</span></a>
+      <a class="st" href="molecular.html" style="--x:47.77%;--y:60.61%;--w:8.94%;--r:4deg;--i:12;--mx:70%;--my:59%;--mw:24%"><img src="../img/collage/celular.png" alt=""><span class="dymo side">Mobile work</span></a>
+      <span class="st deco m-hide" style="--x:55.89%;--y:63.74%;--w:8.21%;--r:-3deg;--i:13"><img src="../img/collage/suculenta.png" alt=""></span>
+      <span class="st deco" style="--x:66.14%;--y:48.89%;--w:15.04%;--r:2deg;--i:14;--mx:76%;--my:78%;--mw:21%"><img src="../img/collage/planta.png" alt=""></span>
+      <a class="st" href="#proceso" style="--x:22.63%;--y:69.21%;--w:27.4%;--r:-2deg;--i:15;--mx:29%;--my:80%;--mw:45%"><img src="../img/collage/cuaderno.png" alt=""><span class="dymo">How I work</span></a>
+      <a class="board-note" href="#proyectos" style="--x:79%;--y:84%;--mx:4%;--my:91%">All projects ↓</a>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="section">
+      <p class="eyebrow label">What I've made</p>
+      <h2>Projects</h2>
+
+      <!-- Primero el foco: UX/UI. Después los juegos, en su propio grupo -->
+      <div class="group-head">
+        <h3>UX/UI · Web and mobile</h3>
+        <p>Apps and websites designed around the people who use them.</p>
+      </div>
+      <div class="projects">
+        <a class="project featured reveal" href="molecular.html">
+          <div class="project-img"><img src="../img/molecular/molecula-geometria.jpg" alt="" loading="lazy"></div>
+          <div class="project-body">
+            <p class="tag">Thesis · Augmented reality app</p>
+            <h3>MoleculAR</h3>
+            <p>Point the camera at a handwritten formula and the molecule appears in 3D.</p>
+            <span class="more">View case →</span>
+          </div>
+        </a>
+        <a class="project reveal" href="anfibia.html">
+          <div class="project-img"><img src="../img/proyectos/anfibia-home.jpg" alt="" loading="lazy"></div>
+          <div class="project-body">
+            <p class="tag">Web redesign · 2021</p>
+            <h3>Revista Anfibia</h3>
+            <p>A real publication, with fewer clicks to reach each story.</p>
+            <span class="more">View case →</span>
+          </div>
+        </a>
+        <a class="project reveal" href="nutri-recetas.html">
+          <div class="project-img"><img src="../img/proyectos/nutri-home.jpg" alt="" loading="lazy"></div>
+          <div class="project-body">
+            <p class="tag">Landing page · 2024</p>
+            <h3>Nutri Recetas</h3>
+            <p>A cooking brand invented from scratch, designed to convert.</p>
+            <span class="more">View case →</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="group-head">
+        <h3>Games and interactive work</h3>
+        <p>What I designed and programmed in Unity and p5.js.</p>
+      </div>
+      <div class="projects">
+        <a class="project reveal" href="infografia.html">
+          <div class="project-img"><img src="../img/proyectos/juegos-sin-texto-poster.jpg" alt="" loading="lazy"></div>
+          <div class="project-body">
+            <p class="tag">Interactive infographic · p5.js · 2025</p>
+            <h3>Interactive Infographic</h3>
+            <p>Six complex-systems concepts explained with toys, without text.</p>
+            <span class="more">View case →</span>
+          </div>
+        </a>
+        <a class="project reveal" href="lyro.html">
+          <div class="project-img"><img src="../img/lyro/portada.jpg" alt="" loading="lazy"></div>
+          <div class="project-body">
+            <p class="tag">Video game · Unity</p>
+            <h3>La odisea de Lyro</h3>
+            <p>One dragon, three islands and two possible endings.</p>
+            <span class="more">View case →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- PROCESO (el cuaderno) -->
+    <section id="proceso" class="section">
+      <p class="eyebrow label">Step by step</p>
+      <h2>How I work</h2>
+      <ol class="process">
+        <li class="reveal"><span>01</span><h3>Research</h3><p>Benchmarks, user personas and understanding what's hard for the people who will use the product.</p></li>
+        <li class="reveal"><span>02</span><h3>Organize</h3><p>Information architecture and flows: what comes first and how you get there.</p></li>
+        <li class="reveal"><span>03</span><h3>Prototype</h3><p>Wireframes and prototypes in Figma, to test before building.</p></li>
+        <li class="reveal"><span>04</span><h3>Build</h3><p>I develop it myself, so the design reaches the final product intact.</p></li>
+      </ol>
+    </section>
+
+    <!-- SOBRE MÍ (el cuadro) -->
+    <section id="sobre-mi" class="section about reveal">
+      <div class="photo"><img src="../img/foto.jpg" alt="Photo of Estefania Solanille" loading="lazy"></div>
+      <div>
+        <p class="eyebrow label">Who I am</p>
+        <h2>About me</h2>
+        <p class="lead">I'm in the final stage of a Bachelor's in Multimedia Design at the Faculty of Arts (UNLP), writing my thesis on augmented reality applied to education. I'm interested in user-centered interaction design, and I also make video games.</p>
+        <div class="skill-groups">
+          <div><h3>UX/UI</h3><p>Figma · Prototyping · Benchmarking · User personas · Information architecture</p></div>
+          <div><h3>Video games</h3><p>Unity · Gameplay programming</p></div>
+          <div><h3>Graphic and audiovisual</h3><p>Photoshop · Affinity · Premiere Pro</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO (la taza) -->
+    <section id="contacto" class="section contact reveal">
+      <!-- Nota de papel pegada con cinta -->
+      <div class="contact-note">
+        <span class="tape" aria-hidden="true"></span>
+        <p class="eyebrow label">Get in touch</p>
+        <h2>Let's talk</h2>
+        <p class="lead center">La Plata, Buenos Aires, Argentina</p>
+        <div class="links big">
+          <a href="mailto:estefania_solanille@hotmail.com">estefania_solanille@hotmail.com</a>
+          <a href="https://linkedin.com/in/estefania-solanille" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://behance.net/maddisonalexrose" target="_blank" rel="noopener">Behance</a>
+          <a href="../cv-estefania-solanille.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Estefania Solanille · 2026</footer>
+
+  <script src="../js/main.js?v=36"></script>
+</body>
+</html>

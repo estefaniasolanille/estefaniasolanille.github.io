@@ -24,16 +24,23 @@ if (!('IntersectionObserver' in window)) {
 
 // ---------- Dock flotante (páginas de proyecto) ----------
 // Se arma acá para no repetir el mismo HTML en cada página.
-// Links extra al final de la barra. blank: true lo abre en otra pestaña.
+// Las páginas en inglés están en en/: los textos cambian y el CV queda una carpeta más arriba.
+const EN = document.documentElement.lang === 'en';
+const ROOT = EN ? '../' : '';
+const T = EN
+  ? { projects: 'Projects', back: 'Back to projects', backShort: 'Back', home: 'Go to the desk', homeShort: 'Desk', infographic: 'Infographic' }
+  : { projects: 'Proyectos', back: 'Volver a proyectos', backShort: 'Volver', home: 'Ir al escritorio', homeShort: 'Escritorio', infographic: 'Infografía' };
+
 const DOCK_PROJECTS = [
   { href: 'molecular.html', label: 'MoleculAR', color: '#278BFB' },
   { href: 'anfibia.html', label: 'Anfibia', color: '#D7F04A' },
   { href: 'nutri-recetas.html', label: 'Nutri', color: '#A3B547' },
-  { href: 'infografia.html', label: 'Infografía', color: '#F2C230' },
+  { href: 'infografia.html', label: T.infographic, color: '#F2C230' },
   { href: 'lyro.html', label: 'Lyro', color: '#FF7A3D' },
 ];
+// Links extra al final de la barra. blank: true lo abre en otra pestaña.
 const DOCK_EXTRA = [
-  { href: 'cv-estefania-solanille.pdf', label: 'CV', blank: true },
+  { href: `${ROOT}cv-estefania-solanille.pdf`, label: 'CV', blank: true },
 ];
 
 if (document.body.classList.contains('page-case')) {
@@ -41,10 +48,10 @@ if (document.body.classList.contains('page-case')) {
   const icon = (d) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
   const dock = document.createElement('nav');
   dock.className = 'dock';
-  dock.setAttribute('aria-label', 'Proyectos');
+  dock.setAttribute('aria-label', T.projects);
   dock.innerHTML = `
-    <a class="round" href="index.html#proyectos" aria-label="Volver a proyectos" title="Volver">${icon('<path d="M19 12H5M12 19l-7-7 7-7"/>')}</a>
-    <a class="round" href="index.html" aria-label="Ir al escritorio" title="Escritorio">${icon('<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/>')}</a>
+    <a class="round" href="index.html#proyectos" aria-label="${T.back}" title="${T.backShort}">${icon('<path d="M19 12H5M12 19l-7-7 7-7"/>')}</a>
+    <a class="round" href="index.html" aria-label="${T.home}" title="${T.homeShort}">${icon('<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/>')}</a>
     <span class="sep" aria-hidden="true"></span>
     ${DOCK_PROJECTS.map((p) => `<a class="proj" href="${p.href}" style="--c:${p.color}" title="${p.label}"${p.href === here ? ' aria-current="page"' : ''}><span>${p.label}</span></a>`).join('')}
     ${DOCK_EXTRA.map((e) => `<a href="${e.href}"${e.blank ? ' target="_blank" rel="noopener"' : ''}>${e.label}</a>`).join('')}`;

@@ -834,3 +834,7 @@ a.st:hover .dymo, a.st:focus-visible .dymo { background: var(--accent); color: v
 @media (max-width: 760px) {
   .projects + .group-head { margin-top: 64px; padding-top: 32px; }
 }
+
+/* Botón de idioma (ES | EN) al final del menú */
+.topbar nav a.lang { margin-left: 6px; border: 1px solid rgba(125, 182, 255, .4); font-weight: 600; letter-spacing: .06em; }
+.topbar nav a.lang:hover { border-color: var(--accent-2); }
