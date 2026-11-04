@@ -838,3 +838,29 @@ a.st:hover .dymo, a.st:focus-visible .dymo { background: var(--accent); color: v
 /* Botón de idioma (ES | EN) al final del menú */
 .topbar nav a.lang { margin-left: 6px; border: 1px solid rgba(125, 182, 255, .4); font-weight: 600; letter-spacing: .06em; }
 .topbar nav a.lang:hover { border-color: var(--accent-2); }
+
+/* Logo: nombre completo en compu, iniciales en celular */
+.logo-short { display: none; }
+@media (max-width: 760px) {
+  .logo-full { display: none; }
+  .logo-short { display: inline; }
+}
+
+/* En celular el menú se desliza de costado: el botón de idioma va primero para que siempre se vea */
+@media (max-width: 760px) {
+  .topbar nav a.lang { order: -1; margin: 0 6px 0 0; }
+}
+
+/* Lyro: dibujos propios en hojas blancas pegadas con cinta */
+.drawings { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 28px; margin: 12px 0 56px; }
+.drawings .wide { grid-column: 1 / -1; }
+.sheet { align-self: start; padding: 18px 18px 12px; background: #FFF; box-shadow: 0 12px 24px rgba(0, 0, 0, .35); rotate: var(--tilt, 0deg); }
+.sheet:nth-child(1) { --tilt: -.6deg; }
+.sheet:nth-child(2) { --tilt: 1.2deg; }
+.sheet:nth-child(3) { --tilt: -1deg; }
+.sheet:nth-child(4) { --tilt: .5deg; }
+.sheet img { display: block; width: 100%; height: auto; }
+.sheet figcaption { margin-top: 10px; color: #4A5568; text-align: center; }
+@media (max-width: 760px) {
+  .drawings { grid-template-columns: 1fr; gap: 32px; }
+}
