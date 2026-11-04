@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css?v=41">
+  <link rel="stylesheet" href="../css/styles.css?v=44">
 </head>
 <body class="page-case theme-molecular">
 
@@ -90,12 +90,25 @@
     <section class="case-block reveal">
       <h2>From a prototype to any molecule</h2>
       <aside class="postit">Teachable Machine → Gemini + PubChem: from a few molecules to any of them</aside>
-      <p>The first version used a model trained in Teachable Machine, which only recognized the molecules I had trained it with. To make it work with any formula, I connected the app to the internet: Gemini reads the handwriting and PubChem returns the molecule's real data.</p>
+      <p>The first version used a model trained in Teachable Machine, which only recognized the molecules I had trained it with. To make it work with any formula, I connected the app to the internet: Gemini reads the handwriting and PubChem returns the molecule's real data. That first version still lives inside the app: without internet, it recognizes the 3 molecules I trained it with.</p>
     </section>
 
     <section class="case-block reveal">
       <h2>Design decisions</h2>
       <p>The camera fills the whole screen so the notebook takes center stage, and the controls sit at the bottom, within thumb reach. The data isn't just text: each card triggers a 3D visualization. Everything is connected (molecule → atom → periodic table) so you can explore without getting lost, and the text size is adjustable.</p>
+    </section>
+
+    <!-- Proceso: de la primera versión a los wireframes, antes de pasar a Unity -->
+    <section class="reveal">
+      <h2 class="gallery-title">From wireframe to app</h2>
+      <p class="gallery-lead">I went straight to wireframes. The first version was for sorting out ideas; then I built each screen in grayscale before taking it to Unity.</p>
+      <div class="drawings wireframes">
+        <figure class="taped sheet wide"><img src="../img/molecular/proceso-v1.jpg" alt="First version: loose home, camera, molecule, inventory and dictionary screens, with notes" loading="lazy"><figcaption>Version 1: for sorting out ideas, before worrying about sizes</figcaption></figure>
+        <figure class="taped sheet tall"><img src="../img/molecular/proceso-inicio.jpg" alt="Home screen wireframe with the scan button and saved molecules" loading="lazy"><figcaption>Home</figcaption></figure>
+        <figure class="taped sheet tall"><img src="../img/molecular/proceso-diccionario.jpg" alt="Dictionary wireframe with search and categories" loading="lazy"><figcaption>Dictionary</figcaption></figure>
+        <figure class="taped sheet"><img src="../img/molecular/proceso-ar.jpg" alt="Wireframe of the methane molecule over the camera, with the info panel" loading="lazy"><figcaption>The molecule over the camera</figcaption></figure>
+        <figure class="taped sheet"><img src="../img/molecular/proceso-elemento.jpg" alt="Wireframe of the sulfur card" loading="lazy"><figcaption>Element card</figcaption></figure>
+      </div>
     </section>
 
     <!-- El resto de las pantallas, barajándose en un panel en vez de una galería larga -->
@@ -125,11 +138,15 @@
     <div class="case-grid reveal">
       <article>
         <h3>User testing</h3>
-        <p>I tested it with friends and family while developing it. Two of them know chemistry and helped me fine-tune the terminology and the information on each card so it was accurate.</p>
+        <p>I tested it with friends and family while developing it. Two of them know chemistry and helped me sketch the first concept map for the dictionary and decide which data every molecule had to show. Based on their feedback I switched picometers (pm) to ångströms (Å) and redesigned elements that looked like buttons but weren't.</p>
       </article>
       <article>
         <h3>What I learned</h3>
         <p>It was my first time programming augmented reality from scratch, and at first it felt too ambitious for a thesis. The app ended up working, and along the way I learned to iterate: test, see what fails and change approach.</p>
+      </article>
+      <article>
+        <h3>What's next</h3>
+        <p>I really enjoyed making it, and I also learned that an augmented reality project this size is a lot for one person. What I liked most was organizing the information and thinking through each screen, and that's where I want to keep going: designing apps and websites.</p>
       </article>
     </div>
 
@@ -139,7 +156,10 @@
     </a>
   </main>
 
-  <footer>Estefania Solanille · 2026</footer>
-  <script src="../js/main.js?v=41"></script>
+  <footer>
+    <span class="sign">Handmade by Estefania · 2026</span>
+    <a class="to-top" href="#">↑ Back to top</a>
+  </footer>
+  <script src="../js/main.js?v=44"></script>
 </body>
 </html>

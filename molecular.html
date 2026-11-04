@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=41">
+  <link rel="stylesheet" href="css/styles.css?v=44">
 </head>
 <body class="page-case theme-molecular">
 
@@ -90,12 +90,25 @@
     <section class="case-block reveal">
       <h2>De un prototipo a cualquier molécula</h2>
       <aside class="postit">Teachable Machine → Gemini + PubChem: de unas pocas moléculas a cualquiera</aside>
-      <p>La primera versión usaba un modelo entrenado en Teachable Machine, que solo reconocía las moléculas con las que lo había entrenado. Para que funcionara con cualquier fórmula, conecté la app a internet: Gemini lee lo escrito a mano y PubChem devuelve los datos reales de la molécula.</p>
+      <p>La primera versión usaba un modelo entrenado en Teachable Machine, que solo reconocía las moléculas con las que lo había entrenado. Para que funcionara con cualquier fórmula, conecté la app a internet: Gemini lee lo escrito a mano y PubChem devuelve los datos reales de la molécula. La primera versión quedó adentro de la app: sin internet, sigue reconociendo las 3 moléculas con las que la entrené.</p>
     </section>
 
     <section class="case-block reveal">
       <h2>Decisiones de diseño</h2>
       <p>La cámara ocupa toda la pantalla para que el cuaderno sea el protagonista, y los controles quedan abajo, al alcance del pulgar. Los datos no son solo texto: cada ficha activa una visualización en 3D. Todo se conecta (molécula → átomo → tabla periódica) para que se pueda explorar sin perderse, y el tamaño del texto es ajustable.</p>
+    </section>
+
+    <!-- Proceso: de la primera versión a los wireframes, antes de pasar a Unity -->
+    <section class="reveal">
+      <h2 class="gallery-title">Del wireframe a la app</h2>
+      <p class="gallery-lead">Arranqué directo con wireframes. La primera versión fue para ordenar ideas; después armé cada pantalla en escala de grises antes de llevarla a Unity.</p>
+      <div class="drawings wireframes">
+        <figure class="taped sheet wide"><img src="img/molecular/proceso-v1.jpg" alt="Primera versión: pantallas sueltas de inicio, cámara, molécula, inventario y diccionario, con notas" loading="lazy"><figcaption>Versión 1: para ordenar ideas, todavía sin cuidar tamaños</figcaption></figure>
+        <figure class="taped sheet tall"><img src="img/molecular/proceso-inicio.jpg" alt="Wireframe de la pantalla de inicio con el botón para escanear y las moléculas guardadas" loading="lazy"><figcaption>Inicio</figcaption></figure>
+        <figure class="taped sheet tall"><img src="img/molecular/proceso-diccionario.jpg" alt="Wireframe del diccionario con buscador y categorías" loading="lazy"><figcaption>Diccionario</figcaption></figure>
+        <figure class="taped sheet"><img src="img/molecular/proceso-ar.jpg" alt="Wireframe de la molécula de metano sobre la cámara, con el panel de información" loading="lazy"><figcaption>La molécula sobre la cámara</figcaption></figure>
+        <figure class="taped sheet"><img src="img/molecular/proceso-elemento.jpg" alt="Wireframe de la ficha del azufre" loading="lazy"><figcaption>Ficha de un elemento</figcaption></figure>
+      </div>
     </section>
 
     <!-- El resto de las pantallas, barajándose en un panel en vez de una galería larga -->
@@ -125,11 +138,15 @@
     <div class="case-grid reveal">
       <article>
         <h3>Pruebas con usuarios</h3>
-        <p>La probé con amigos y familia mientras la desarrollaba. Dos de ellas saben química y me ayudaron a ajustar la terminología y la información de cada ficha para que fuera correcta.</p>
+        <p>La probé con amigos y familia mientras la desarrollaba. Dos de ellas saben química y me ayudaron a armar el primer boceto de la red conceptual del diccionario y a definir qué datos tenía que mostrar sí o sí cada molécula. Con sus comentarios cambié los picómetros (pm) por ángstroms (Å) y rediseñé elementos que parecían botones sin serlo.</p>
       </article>
       <article>
         <h3>Lo que aprendí</h3>
         <p>Era la primera vez que programaba realidad aumentada desde cero, y al principio me pareció demasiado ambicioso para una tesis. La app terminó funcionando, y en el camino aprendí a iterar: probar, ver qué falla y cambiar de enfoque.</p>
+      </article>
+      <article>
+        <h3>Qué sigue</h3>
+        <p>Disfruté mucho hacerla, y también aprendí que un proyecto de realidad aumentada de este tamaño es mucho para una sola persona. Lo que más me gustó fue ordenar la información y pensar cada pantalla, y por ahí quiero seguir: diseño de apps y sitios web.</p>
       </article>
     </div>
 
@@ -139,7 +156,10 @@
     </a>
   </main>
 
-  <footer>Estefania Solanille · 2026</footer>
-  <script src="js/main.js?v=41"></script>
+  <footer>
+    <span class="sign">Hecho a mano por Estefania · 2026</span>
+    <a class="to-top" href="#">↑ Volver arriba</a>
+  </footer>
+  <script src="js/main.js?v=44"></script>
 </body>
 </html>

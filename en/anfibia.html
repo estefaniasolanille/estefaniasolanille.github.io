@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css?v=41">
+  <link rel="stylesheet" href="../css/styles.css?v=44">
 </head>
 <body class="page-case theme-anfibia">
 
@@ -58,17 +58,30 @@
       </div>
     </header>
 
+    <!-- Antes/después: el sitio original (Wayback Machine, octubre 2021) contra el rediseño -->
+    <section class="reveal">
+      <h2 class="gallery-title">Before and after</h2>
+      <p class="gallery-lead">Drag the line: on the left, the original site in 2021; on the right, our redesign.</p>
+      <div class="compare">
+        <img src="../img/proyectos/anfibia-despues.jpg" alt="Redesign: a 3-category menu and a full-screen featured story" loading="lazy">
+        <img class="compare-before" src="../img/proyectos/anfibia-antes.jpg" alt="Original 2021 site: a 6-category menu" loading="lazy">
+        <span class="compare-tag before" aria-hidden="true">Before · 2021</span>
+        <span class="compare-tag after" aria-hidden="true">After</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Move the line between before and after">
+      </div>
+    </section>
+
     <!-- Panel tipo revista: las decisiones a un lado y las pantallas barajándose al otro -->
     <div class="bento reveal">
       <div class="bento-text">
         <h2>Decisions</h2>
         <ul>
-          <li><strong>Navigation:</strong> the main menu went from 7 to 3 categories, with secondary sections in a dropdown, so you reach a story in fewer clicks.</li>
+          <li><strong>Navigation:</strong> the main menu went from 6 to 3 categories, with secondary sections in a dropdown, so you reach a story in fewer clicks.</li>
           <li><strong>Typography:</strong> sans-serif for body text, more readable on small screens. The serif was kept only for story headlines, as a nod to the original editorial identity.</li>
           <li><strong>Identity:</strong> we kept the original site's palette, with 2 main colors and 2 accent colors.</li>
         </ul>
         <p><strong>My role:</strong> the site structure and information architecture. The three of us did the visual design together.</p>
-      <aside class="postit">Menu: from 7 to 3 categories</aside>
+      <aside class="postit">Menu: from 6 to 3 categories</aside>
       </div>
       <div class="shuffle" tabindex="0" role="button" aria-label="Show the next screen">
         <figure class="shuffle-card" data-label="Home page"><img src="../img/proyectos/anfibia-home.jpg" alt="Home page of the Revista Anfibia redesign in a browser"></figure>
@@ -85,7 +98,10 @@
     </a>
   </main>
 
-  <footer>Estefania Solanille · 2026</footer>
-  <script src="../js/main.js?v=41"></script>
+  <footer>
+    <span class="sign">Handmade by Estefania · 2026</span>
+    <a class="to-top" href="#">↑ Back to top</a>
+  </footer>
+  <script src="../js/main.js?v=44"></script>
 </body>
 </html>

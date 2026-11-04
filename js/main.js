@@ -58,6 +58,33 @@ if (document.body.classList.contains('page-case')) {
   document.body.appendChild(dock);
 }
 
+// ---------- Barra de progreso de lectura (páginas de proyecto) ----------
+// Una línea finita del color del proyecto, en el borde de abajo del menú, que avanza al bajar
+if (document.body.classList.contains('page-case')) {
+  const bar = document.createElement('span');
+  bar.className = 'read-progress';
+  bar.setAttribute('aria-hidden', 'true');
+  document.querySelector('.topbar').appendChild(bar);
+  let ticking = false;
+  const update = () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.transform = `scaleX(${max > 0 ? Math.min(window.scrollY / max, 1) : 0})`;
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  update();
+}
+
+// ---------- Antes/después: la línea sigue al control deslizante ----------
+document.querySelectorAll('.compare').forEach((box) => {
+  const range = box.querySelector('input[type="range"]');
+  const move = () => box.style.setProperty('--pos', `${range.value}%`);
+  range.addEventListener('input', move);
+  move();
+});
+
 // ---------- Videos de demostración ----------
 // Con "reducir movimiento" no arrancan solos: se muestran con controles para darles play
 if (reduceMotion) {
