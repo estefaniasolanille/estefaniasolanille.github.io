@@ -77,6 +77,21 @@ if (document.body.classList.contains('page-case')) {
   update();
 }
 
+// ---------- Resaltador: la marca se pinta cuando la frase aparece en pantalla ----------
+const marks = document.querySelectorAll('.mark');
+if (!('IntersectionObserver' in window)) {
+  marks.forEach((m) => m.classList.add('on'));
+} else {
+  const markObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('on');
+      markObserver.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -15% 0px' });
+  marks.forEach((m) => markObserver.observe(m));
+}
+
 // ---------- Antes/después: la línea sigue al control deslizante ----------
 document.querySelectorAll('.compare').forEach((box) => {
   const range = box.querySelector('input[type="range"]');
