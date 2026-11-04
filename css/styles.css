@@ -854,13 +854,14 @@ a.st:hover .dymo, a.st:focus-visible .dymo { background: var(--accent); color: v
 /* Lyro: dibujos propios en hojas blancas pegadas con cinta */
 .drawings { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 28px; margin: 12px 0 56px; }
 .drawings .wide { grid-column: 1 / -1; }
-.sheet { align-self: start; padding: 18px 18px 12px; background: #FFF; box-shadow: 0 12px 24px rgba(0, 0, 0, .35); rotate: var(--tilt, 0deg); }
+.sheet { align-self: start; padding: 18px 18px 12px; background: var(--grain-dark), #D9C8AE; box-shadow: 0 12px 24px rgba(0, 0, 0, .35); rotate: var(--tilt, 0deg); }
 .sheet:nth-child(1) { --tilt: -.6deg; }
 .sheet:nth-child(2) { --tilt: 1.2deg; }
 .sheet:nth-child(3) { --tilt: -1deg; }
 .sheet:nth-child(4) { --tilt: .5deg; }
-.sheet img { display: block; width: 100%; height: auto; }
-.sheet figcaption { margin-top: 10px; color: #4A5568; text-align: center; }
+/* El blanco del dibujo toma el color del papel, como si estuviera impreso sobre él */
+.sheet img { display: block; width: 100%; height: auto; mix-blend-mode: multiply; }
+.sheet figcaption { margin-top: 10px; color: #4B3B30; text-align: center; }
 @media (max-width: 760px) {
   .drawings { grid-template-columns: 1fr; gap: 32px; }
 }
