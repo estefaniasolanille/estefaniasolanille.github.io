@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=45">
+  <link rel="stylesheet" href="css/styles.css?v=46">
 </head>
 <body class="page-case theme-molecular">
 
@@ -60,17 +60,11 @@
       </div>
     </header>
 
-    <!-- Video real de la app: escaneo (vertical) y exploración de la molécula (horizontal) -->
-    <div class="ar-intro reveal">
-      <figure class="phone">
-        <video class="demo-video" src="video/molecular-escaneo.mp4?v=2" poster="img/molecular/escaneo-poster.jpg?v=2" autoplay muted loop playsinline aria-label="La cámara de MoleculAR escaneando H2O escrito a mano en un cuaderno"></video>
-        <figcaption>1 · Apuntás al cuaderno y escanea la fórmula</figcaption>
-      </figure>
-      <figure>
-        <video class="demo-video" src="video/molecular-demo.mp4?v=2" poster="img/molecular/demo-poster.jpg?v=2" autoplay muted loop playsinline aria-label="El agua en 3D sobre el cuaderno: se giran los átomos y se tocan las fichas de peso, estado, enlaces y geometría"></video>
-        <figcaption>2 · Aparece la molécula en 3D y la explorás tocando átomos y fichas</figcaption>
-      </figure>
-    </div>
+    <!-- Video real de la app (versión actual, toda horizontal) -->
+    <figure class="taped reveal">
+      <video class="demo-video" src="video/molecular-app.mp4" poster="img/molecular/app-poster.jpg" autoplay muted loop playsinline aria-label="Recorrido por MoleculAR: escaneo de CH4, la molécula en 3D, la ficha del carbono, la mesa de armado, las tendencias y el diccionario"></video>
+      <figcaption>Escaneo, molécula en 3D, ficha del elemento, mesa de armado, tendencias y diccionario</figcaption>
+    </figure>
 
     <section class="case-block reveal">
       <h2>El problema</h2>
@@ -83,7 +77,7 @@
       <div class="gallery three">
         <figure class="taped"><img src="img/molecular/molecula-estado.jpg" alt="Varias moléculas de agua flotando alrededor para representar el estado líquido" loading="lazy"><figcaption><strong>Estado:</strong> aparecen más moléculas moviéndose como en un líquido</figcaption></figure>
         <figure class="taped"><img src="img/molecular/molecula-enlaces.jpg" alt="Enlaces del agua marcados con cargas parciales delta" loading="lazy"><figcaption><strong>Enlaces:</strong> se marcan los enlaces y las cargas parciales (δ+ y δ−)</figcaption></figure>
-        <figure class="taped"><img src="img/molecular/molecula-geometria.jpg" alt="Arco amarillo que muestra el ángulo de 104 grados entre los hidrógenos" loading="lazy"><figcaption><strong>Geometría:</strong> se dibuja el ángulo de 104° entre los hidrógenos</figcaption></figure>
+        <figure class="taped"><img src="img/molecular/app-angulo.jpg" alt="Metano en 3D con el ángulo de 109,4 grados marcado entre dos enlaces" loading="lazy"><figcaption><strong>Geometría:</strong> se dibuja el ángulo entre los enlaces (109,4° en el metano)</figcaption></figure>
       </div>
     </section>
 
@@ -96,6 +90,7 @@
     <section class="case-block reveal">
       <h2>Decisiones de diseño</h2>
       <p>La cámara ocupa toda la pantalla para que el cuaderno sea el protagonista, y los controles quedan abajo, al alcance del pulgar. Los datos no son solo texto: cada ficha activa una visualización en 3D. Todo se conecta (molécula → átomo → tabla periódica) para que se pueda explorar sin perderse, y el tamaño del texto es ajustable.</p>
+      <p>Al principio la app era vertical para escanear y horizontal para explorar la molécula. Girar el teléfono a cada rato resultaba incómodo (me lo marcó mi profesor), así que <span class="mark">pasé toda la app a horizontal</span>: se usa igual de principio a fin.</p>
     </section>
 
     <!-- Proceso: de la primera versión a los wireframes, antes de pasar a Unity -->
@@ -109,6 +104,14 @@
         <figure class="taped sheet"><img src="img/molecular/proceso-ar.jpg" alt="Wireframe de la molécula de metano sobre la cámara, con el panel de información" loading="lazy"><figcaption>La molécula sobre la cámara</figcaption></figure>
         <figure class="taped sheet"><img src="img/molecular/proceso-elemento.jpg" alt="Wireframe de la ficha del azufre" loading="lazy"><figcaption>Ficha de un elemento</figcaption></figure>
       </div>
+      <h3 class="gallery-title sub">Versión anterior</h3>
+      <p class="gallery-lead">Vertical para escanear y horizontal para explorar la molécula. Después la pasé toda a horizontal.</p>
+      <div class="drawings wireframes">
+        <figure class="taped sheet tall"><img src="img/molecular/inicio.jpg" alt="Versión anterior: cámara vertical con H2O escrito en el cuaderno" loading="lazy"><figcaption>Escaneo vertical</figcaption></figure>
+        <figure class="taped sheet tall"><img src="img/molecular/configuracion.jpg" alt="Versión anterior: configuración en vertical" loading="lazy"><figcaption>Configuración</figcaption></figure>
+        <figure class="taped sheet"><img src="img/molecular/molecula-atomo.jpg" alt="Versión anterior: oxígeno seleccionado dentro del agua" loading="lazy"><figcaption>La molécula, ya en horizontal</figcaption></figure>
+        <figure class="taped sheet"><img src="img/molecular/tabla-periodica.jpg" alt="Versión anterior: tabla periódica con colores por categoría" loading="lazy"><figcaption>Tabla periódica</figcaption></figure>
+      </div>
     </section>
 
     <!-- El resto de las pantallas, barajándose en un panel en vez de una galería larga -->
@@ -116,20 +119,23 @@
       <div class="bento-text">
         <h2>Explorar y estudiar</h2>
         <ul>
-          <li><strong>Del átomo a la tabla:</strong> tocás un átomo de la molécula y llegás a su ficha y a su lugar en la tabla periódica, con la estructura de Lewis.</li>
-          <li><strong>Tabla periódica:</strong> el color indica la categoría y el borde, el estado a 25 °C.</li>
+          <li><strong>Del átomo a la tabla:</strong> tocás un átomo de la molécula y llegás a su ficha y a su lugar en la tabla periódica.</li>
+          <li><strong>Mesa de armado:</strong> arrastrás elementos de la tabla y armás tus propias moléculas; la app muestra la estructura, el modelo 3D, el nombre y el tipo de enlace.</li>
+          <li><strong>Tendencias:</strong> la tabla se pinta según la electronegatividad, el radio o la masa.</li>
           <li><strong>Diccionario:</strong> como mapa conceptual o como lista con buscador.</li>
+          <li><strong>Historial:</strong> cada molécula escaneada queda guardada con la foto del cuaderno.</li>
           <li><strong>Accesibilidad:</strong> tamaño de texto ajustable.</li>
         </ul>
       </div>
       <div class="shuffle" tabindex="0" role="button" aria-label="Ver la siguiente pantalla">
-        <figure class="shuffle-card" data-label="Átomo en la tabla periódica"><img src="img/molecular/elemento-tabla.jpg" alt="Tabla periódica con el oxígeno resaltado y su estructura de Lewis"></figure>
-        <figure class="shuffle-card" data-label="Propiedades del átomo"><img src="img/molecular/molecula-atomo.jpg" alt="Oxígeno seleccionado dentro de la molécula, con masa atómica, electronegatividad y radio"></figure>
-        <figure class="shuffle-card" data-label="Ficha del elemento"><img src="img/molecular/elemento.jpg" alt="Ficha completa del oxígeno con número atómico y propiedades"></figure>
-        <figure class="shuffle-card" data-label="Tabla periódica"><img src="img/molecular/tabla-periodica.jpg" alt="Tabla periódica con colores por categoría y estilos por estado"></figure>
-        <figure class="shuffle-card" data-label="Diccionario: mapa"><img src="img/molecular/diccionario-mapa.jpg" alt="Diccionario como mapa conceptual de enlace químico"></figure>
-        <figure class="shuffle-card" data-label="Diccionario: lista"><img src="img/molecular/diccionario-lista.jpg" alt="Diccionario en formato lista con buscador"></figure>
-        <figure class="shuffle-card" data-label="Configuración"><img src="img/molecular/configuracion.jpg" alt="Configuración con tamaño de texto, historial y búsqueda por fórmula"></figure>
+        <figure class="shuffle-card" data-label="Mesa de armado"><img src="img/molecular/v2-mesa.jpg" alt="Mesa de armado con agua oxigenada: estructura, modelo 3D y tipo de enlace, al lado de la tabla periódica"></figure>
+        <figure class="shuffle-card" data-label="Tendencias"><img src="img/molecular/v2-tendencias.jpg" alt="Tabla periódica pintada en azules según la electronegatividad"></figure>
+        <figure class="shuffle-card" data-label="Propiedades del átomo"><img src="img/molecular/v2-atomo.jpg" alt="Hidrógeno seleccionado dentro del metano, con masa atómica, electronegatividad y radio"></figure>
+        <figure class="shuffle-card" data-label="Ficha del elemento"><img src="img/molecular/v2-elemento.jpg" alt="Ficha del berilio con su modelo atómico y propiedades"></figure>
+        <figure class="shuffle-card" data-label="Diccionario: lista"><img src="img/molecular/v2-diccionario-lista.jpg" alt="Diccionario en formato lista, con la definición de ángulo de enlace"></figure>
+        <figure class="shuffle-card" data-label="Diccionario: mapa"><img src="img/molecular/v2-diccionario-mapa.jpg" alt="Diccionario como mapa conceptual de enlace químico"></figure>
+        <figure class="shuffle-card" data-label="Historial"><img src="img/molecular/v2-historial.jpg" alt="Historial con las fotos del cuaderno del metano y el agua"></figure>
+        <figure class="shuffle-card" data-label="Configuración"><img src="img/molecular/v2-configuracion.jpg" alt="Configuración con tamaño de texto, borrar historial y ayuda"></figure>
         <span class="shuffle-label"></span>
         <div class="shuffle-dots" aria-hidden="true"></div>
       </div>
@@ -160,6 +166,6 @@
     <span class="sign">Hecho a mano por Estefania · 2026</span>
     <a class="to-top" href="#">↑ Volver arriba</a>
   </footer>
-  <script src="js/main.js?v=45"></script>
+  <script src="js/main.js?v=46"></script>
 </body>
 </html>

@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css?v=45">
+  <link rel="stylesheet" href="../css/styles.css?v=46">
 </head>
 <body class="page-case theme-molecular">
 
@@ -60,17 +60,11 @@
       </div>
     </header>
 
-    <!-- Video real de la app: escaneo (vertical) y exploración de la molécula (horizontal) -->
-    <div class="ar-intro reveal">
-      <figure class="phone">
-        <video class="demo-video" src="../video/molecular-escaneo.mp4?v=2" poster="../img/molecular/escaneo-poster.jpg?v=2" autoplay muted loop playsinline aria-label="The MoleculAR camera scanning H2O handwritten in a notebook"></video>
-        <figcaption>1 · Point at the notebook and it scans the formula</figcaption>
-      </figure>
-      <figure>
-        <video class="demo-video" src="../video/molecular-demo.mp4?v=2" poster="../img/molecular/demo-poster.jpg?v=2" autoplay muted loop playsinline aria-label="Water in 3D over the notebook: the atoms are rotated and the weight, state, bond and geometry cards are tapped"></video>
-        <figcaption>2 · The molecule appears in 3D and you explore it by tapping atoms and cards</figcaption>
-      </figure>
-    </div>
+    <!-- Video real de la app (versión actual, toda horizontal) -->
+    <figure class="taped reveal">
+      <video class="demo-video" src="../video/molecular-app.mp4" poster="../img/molecular/app-poster.jpg" autoplay muted loop playsinline aria-label="A tour of MoleculAR: scanning CH4, the 3D molecule, the carbon card, the building table, trends and the dictionary"></video>
+      <figcaption>Scanning, 3D molecule, element card, building table, trends and dictionary</figcaption>
+    </figure>
 
     <section class="case-block reveal">
       <h2>The problem</h2>
@@ -83,7 +77,7 @@
       <div class="gallery three">
         <figure class="taped"><img src="../img/molecular/molecula-estado.jpg" alt="Several water molecules floating around to represent the liquid state" loading="lazy"><figcaption><strong>State:</strong> more molecules appear, moving like in a liquid</figcaption></figure>
         <figure class="taped"><img src="../img/molecular/molecula-enlaces.jpg" alt="Water bonds marked with partial delta charges" loading="lazy"><figcaption><strong>Bonds:</strong> the bonds and partial charges (δ+ and δ−) are highlighted</figcaption></figure>
-        <figure class="taped"><img src="../img/molecular/molecula-geometria.jpg" alt="Yellow arc showing the 104-degree angle between the hydrogens" loading="lazy"><figcaption><strong>Geometry:</strong> the 104° angle between the hydrogens is drawn</figcaption></figure>
+        <figure class="taped"><img src="../img/molecular/app-angulo.jpg" alt="Methane in 3D with the 109.4-degree angle marked between two bonds" loading="lazy"><figcaption><strong>Geometry:</strong> the angle between the bonds is drawn (109.4° in methane)</figcaption></figure>
       </div>
     </section>
 
@@ -96,6 +90,7 @@
     <section class="case-block reveal">
       <h2>Design decisions</h2>
       <p>The camera fills the whole screen so the notebook takes center stage, and the controls sit at the bottom, within thumb reach. The data isn't just text: each card triggers a 3D visualization. Everything is connected (molecule → atom → periodic table) so you can explore without getting lost, and the text size is adjustable.</p>
+      <p>At first the app was vertical for scanning and horizontal for exploring the molecule. Turning the phone back and forth was awkward (my professor pointed it out), so <span class="mark">I made the whole app horizontal</span>: it works the same way from start to finish.</p>
     </section>
 
     <!-- Proceso: de la primera versión a los wireframes, antes de pasar a Unity -->
@@ -109,6 +104,14 @@
         <figure class="taped sheet"><img src="../img/molecular/proceso-ar.jpg" alt="Wireframe of the methane molecule over the camera, with the info panel" loading="lazy"><figcaption>The molecule over the camera</figcaption></figure>
         <figure class="taped sheet"><img src="../img/molecular/proceso-elemento.jpg" alt="Wireframe of the sulfur card" loading="lazy"><figcaption>Element card</figcaption></figure>
       </div>
+      <h3 class="gallery-title sub">Previous version</h3>
+      <p class="gallery-lead">Vertical for scanning and horizontal for exploring the molecule. Later I made it all horizontal.</p>
+      <div class="drawings wireframes">
+        <figure class="taped sheet tall"><img src="../img/molecular/inicio.jpg" alt="Previous version: vertical camera with H2O written in the notebook" loading="lazy"><figcaption>Vertical scanning</figcaption></figure>
+        <figure class="taped sheet tall"><img src="../img/molecular/configuracion.jpg" alt="Previous version: settings in portrait" loading="lazy"><figcaption>Settings</figcaption></figure>
+        <figure class="taped sheet"><img src="../img/molecular/molecula-atomo.jpg" alt="Previous version: oxygen selected inside water" loading="lazy"><figcaption>The molecule, already horizontal</figcaption></figure>
+        <figure class="taped sheet"><img src="../img/molecular/tabla-periodica.jpg" alt="Previous version: periodic table colored by category" loading="lazy"><figcaption>Periodic table</figcaption></figure>
+      </div>
     </section>
 
     <!-- El resto de las pantallas, barajándose en un panel en vez de una galería larga -->
@@ -116,20 +119,23 @@
       <div class="bento-text">
         <h2>Explore and study</h2>
         <ul>
-          <li><strong>From atom to table:</strong> tap an atom in the molecule to reach its card and its place in the periodic table, with its Lewis structure.</li>
-          <li><strong>Periodic table:</strong> the color shows the category, and the border, the state at 25 °C.</li>
+          <li><strong>From atom to table:</strong> tap an atom in the molecule to reach its card and its place in the periodic table.</li>
+          <li><strong>Building table:</strong> drag elements from the table to build your own molecules; the app shows the structure, the 3D model, the name and the bond type.</li>
+          <li><strong>Trends:</strong> the table is colored by electronegativity, radius or mass.</li>
           <li><strong>Dictionary:</strong> as a concept map or as a searchable list.</li>
+          <li><strong>History:</strong> every scanned molecule is saved with the photo of the notebook.</li>
           <li><strong>Accessibility:</strong> adjustable text size.</li>
         </ul>
       </div>
       <div class="shuffle" tabindex="0" role="button" aria-label="Show the next screen">
-        <figure class="shuffle-card" data-label="Atom in the periodic table"><img src="../img/molecular/elemento-tabla.jpg" alt="Periodic table with oxygen highlighted and its Lewis structure"></figure>
-        <figure class="shuffle-card" data-label="Atom properties"><img src="../img/molecular/molecula-atomo.jpg" alt="Oxygen selected inside the molecule, with atomic mass, electronegativity and radius"></figure>
-        <figure class="shuffle-card" data-label="Element card"><img src="../img/molecular/elemento.jpg" alt="Full oxygen card with atomic number and properties"></figure>
-        <figure class="shuffle-card" data-label="Periodic table"><img src="../img/molecular/tabla-periodica.jpg" alt="Periodic table with colors by category and styles by state"></figure>
-        <figure class="shuffle-card" data-label="Dictionary: map"><img src="../img/molecular/diccionario-mapa.jpg" alt="Dictionary as a concept map of chemical bonding"></figure>
-        <figure class="shuffle-card" data-label="Dictionary: list"><img src="../img/molecular/diccionario-lista.jpg" alt="Dictionary as a searchable list"></figure>
-        <figure class="shuffle-card" data-label="Settings"><img src="../img/molecular/configuracion.jpg" alt="Settings with text size, history and search by formula"></figure>
+        <figure class="shuffle-card" data-label="Building table"><img src="../img/molecular/v2-mesa.jpg" alt="Building table with hydrogen peroxide: structure, 3D model and bond type, next to the periodic table"></figure>
+        <figure class="shuffle-card" data-label="Trends"><img src="../img/molecular/v2-tendencias.jpg" alt="Periodic table shaded in blues by electronegativity"></figure>
+        <figure class="shuffle-card" data-label="Atom properties"><img src="../img/molecular/v2-atomo.jpg" alt="Hydrogen selected inside methane, with atomic mass, electronegativity and radius"></figure>
+        <figure class="shuffle-card" data-label="Element card"><img src="../img/molecular/v2-elemento.jpg" alt="Beryllium card with its atomic model and properties"></figure>
+        <figure class="shuffle-card" data-label="Dictionary: list"><img src="../img/molecular/v2-diccionario-lista.jpg" alt="Dictionary as a list, with the definition of bond angle"></figure>
+        <figure class="shuffle-card" data-label="Dictionary: map"><img src="../img/molecular/v2-diccionario-mapa.jpg" alt="Dictionary as a concept map of chemical bonding"></figure>
+        <figure class="shuffle-card" data-label="History"><img src="../img/molecular/v2-historial.jpg" alt="History with the notebook photos of methane and water"></figure>
+        <figure class="shuffle-card" data-label="Settings"><img src="../img/molecular/v2-configuracion.jpg" alt="Settings with text size, clear history and help"></figure>
         <span class="shuffle-label"></span>
         <div class="shuffle-dots" aria-hidden="true"></div>
       </div>
@@ -160,6 +166,6 @@
     <span class="sign">Handmade by Estefania · 2026</span>
     <a class="to-top" href="#">↑ Back to top</a>
   </footer>
-  <script src="../js/main.js?v=45"></script>
+  <script src="../js/main.js?v=46"></script>
 </body>
 </html>

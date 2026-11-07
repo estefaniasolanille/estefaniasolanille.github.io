@@ -989,3 +989,6 @@ a.st:hover .dymo, a.st:focus-visible .dymo { background: var(--accent); color: v
 @media (prefers-reduced-motion: reduce) {
   .mark { transition: none; }
 }
+
+/* Subtítulo dentro de una sección de galería (ej.: "Versión anterior" en MoleculAR) */
+.gallery-title.sub { font-size: 1.15rem; margin-top: 8px; }
