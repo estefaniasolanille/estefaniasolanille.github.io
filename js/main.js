@@ -143,18 +143,6 @@ document.querySelectorAll('.shuffle').forEach((box) => {
   layout();
 });
 
-document.querySelectorAll('.board a.st[href$=".html"]').forEach((st) => {
-  st.addEventListener('click', (e) => {
-    if (reduceMotion || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    e.preventDefault();
-    st.classList.add('picked');
-    setTimeout(() => { location.href = st.getAttribute('href'); }, 280);
-  });
-});
-window.addEventListener('pageshow', () => {
-  document.querySelectorAll('.board .picked').forEach((st) => st.classList.remove('picked'));
-});
-
 const nameCard = document.querySelector('.name-card');
 if (nameCard && !reduceMotion) {
   const lines = [nameCard.querySelector('h1'), nameCard.querySelector('.role')];
@@ -191,4 +179,19 @@ if (navLinks.length) {
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
   document.querySelectorAll('main .section').forEach((s) => navObserver.observe(s));
+}
+
+const fitTags = () => document.querySelectorAll('.desk .tag').forEach((tag) => {
+  const box = tag.querySelector('text').getBBox();
+  const bg = tag.querySelector('.tag-bg');
+  const h = box.height + 16;
+  bg.setAttribute('x', box.x - 16);
+  bg.setAttribute('y', box.y - 8);
+  bg.setAttribute('width', box.width + 32);
+  bg.setAttribute('height', h);
+  bg.setAttribute('rx', h / 2);
+});
+if (document.querySelector('.desk')) {
+  document.fonts.ready.then(fitTags);
+  window.addEventListener('resize', fitTags);
 }
