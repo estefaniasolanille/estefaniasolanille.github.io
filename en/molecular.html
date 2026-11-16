@@ -9,7 +9,6 @@
   <link rel="alternate" hreflang="en" href="https://estefaniasolanille.github.io/en/molecular.html">
   <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
   <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
-  <!-- Vista previa al compartir el link (WhatsApp, LinkedIn, mail) -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://estefaniasolanille.github.io/en/molecular.html">
   <meta property="og:title" content="MoleculAR · Estefania Solanille">
@@ -23,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css?v=47">
+  <link rel="stylesheet" href="../css/styles.css?v=48">
 </head>
 <body class="page-case theme-molecular">
 
@@ -60,9 +59,8 @@
       </div>
     </header>
 
-    <!-- Video real de la app (versión actual, toda horizontal) -->
     <figure class="taped reveal">
-      <video class="demo-video" src="../video/molecular-app.mp4" poster="../img/molecular/app-poster.jpg" autoplay muted loop playsinline aria-label="A tour of MoleculAR: scanning CH4, the 3D molecule, the carbon card, the building table, trends and the dictionary"></video>
+      <video class="demo-video" src="../video/molecular-app.mp4?v=2" poster="../img/molecular/app-poster.jpg" autoplay muted loop playsinline aria-label="A tour of MoleculAR: scanning CH4, the 3D molecule, the carbon card, the building table, trends and the dictionary"></video>
       <figcaption>Scanning, 3D molecule, element card, building table, trends and dictionary</figcaption>
     </figure>
 
@@ -75,9 +73,9 @@
       <h2 class="gallery-title">Every fact can be seen, not just read</h2>
       <p class="gallery-lead">Tap a card and the molecule changes to show that concept.</p>
       <div class="gallery three">
-        <figure class="taped"><img src="../img/molecular/molecula-estado.jpg" alt="Several water molecules floating around to represent the liquid state" loading="lazy"><figcaption><strong>State:</strong> more molecules appear, moving like in a liquid</figcaption></figure>
-        <figure class="taped"><img src="../img/molecular/molecula-enlaces.jpg" alt="Water bonds marked with partial delta charges" loading="lazy"><figcaption><strong>Bonds:</strong> the bonds and partial charges (δ+ and δ−) are highlighted</figcaption></figure>
-        <figure class="taped"><img src="../img/molecular/app-angulo.jpg" alt="Methane in 3D with the 109.4-degree angle marked between two bonds" loading="lazy"><figcaption><strong>Geometry:</strong> the angle between the bonds is drawn (109.4° in methane)</figcaption></figure>
+        <figure class="taped"><img src="../img/molecular/app-estado.jpg" alt="Methane in 3D with several small molecules floating around to represent the gas state" loading="lazy"><figcaption><strong>State:</strong> more molecules appear, floating like in a gas</figcaption></figure>
+        <figure class="taped"><img src="../img/molecular/app-enlaces.jpg" alt="Methane in 3D with its four single bonds highlighted in blue" loading="lazy"><figcaption><strong>Bonds:</strong> the bonds are highlighted (4 single bonds in methane)</figcaption></figure>
+        <figure class="taped"><img src="../img/molecular/app-geometria.jpg" alt="Methane in 3D with the 109.5-degree angle marked between two bonds" loading="lazy"><figcaption><strong>Geometry:</strong> the angle between the bonds is drawn (109.5° in methane)</figcaption></figure>
       </div>
     </section>
 
@@ -93,7 +91,6 @@
       <p>At first the app was vertical for scanning and horizontal for exploring the molecule. Turning the phone back and forth was awkward (my professor pointed it out), so <span class="mark">I made the whole app horizontal</span>: it works the same way from start to finish.</p>
     </section>
 
-    <!-- Proceso: de la primera versión a los wireframes, antes de pasar a Unity -->
     <section class="reveal">
       <h2 class="gallery-title">From wireframe to app</h2>
       <p class="gallery-lead">I went straight to wireframes. The first version was for sorting out ideas; then I built each screen in grayscale before taking it to Unity.</p>
@@ -114,7 +111,6 @@
       </div>
     </section>
 
-    <!-- El resto de las pantallas, barajándose en un panel en vez de una galería larga -->
     <div class="bento reveal">
       <div class="bento-text">
         <h2>Explore and study</h2>
@@ -128,14 +124,14 @@
         </ul>
       </div>
       <div class="shuffle" tabindex="0" role="button" aria-label="Show the next screen">
-        <figure class="shuffle-card" data-label="Building table"><img src="../img/molecular/v2-mesa.jpg" alt="Building table with hydrogen peroxide: structure, 3D model and bond type, next to the periodic table"></figure>
-        <figure class="shuffle-card" data-label="Trends"><img src="../img/molecular/v2-tendencias.jpg" alt="Periodic table shaded in blues by electronegativity"></figure>
-        <figure class="shuffle-card" data-label="Atom properties"><img src="../img/molecular/v2-atomo.jpg" alt="Hydrogen selected inside methane, with atomic mass, electronegativity and radius"></figure>
-        <figure class="shuffle-card" data-label="Element card"><img src="../img/molecular/v2-elemento.jpg" alt="Beryllium card with its atomic model and properties"></figure>
-        <figure class="shuffle-card" data-label="Dictionary: list"><img src="../img/molecular/v2-diccionario-lista.jpg" alt="Dictionary as a list, with the definition of bond angle"></figure>
-        <figure class="shuffle-card" data-label="Dictionary: map"><img src="../img/molecular/v2-diccionario-mapa.jpg" alt="Dictionary as a concept map of chemical bonding"></figure>
-        <figure class="shuffle-card" data-label="History"><img src="../img/molecular/v2-historial.jpg" alt="History with the notebook photos of methane and water"></figure>
-        <figure class="shuffle-card" data-label="Settings"><img src="../img/molecular/v2-configuracion.jpg" alt="Settings with text size, clear history and help"></figure>
+        <figure class="shuffle-card" data-label="Building table"><img loading="lazy" src="../img/molecular/v2-mesa.jpg" alt="Building table with hydrogen peroxide: structure, 3D model and bond type, next to the periodic table"></figure>
+        <figure class="shuffle-card" data-label="Trends"><img loading="lazy" src="../img/molecular/v2-tendencias.jpg" alt="Periodic table shaded in blues by electronegativity"></figure>
+        <figure class="shuffle-card" data-label="Atom properties"><img loading="lazy" src="../img/molecular/v2-atomo.jpg" alt="Hydrogen selected inside methane, with atomic mass, electronegativity and radius"></figure>
+        <figure class="shuffle-card" data-label="Element card"><img loading="lazy" src="../img/molecular/v2-elemento.jpg" alt="Beryllium card with its atomic model and properties"></figure>
+        <figure class="shuffle-card" data-label="Dictionary: list"><img loading="lazy" src="../img/molecular/v2-diccionario-lista.jpg" alt="Dictionary as a list, with the definition of bond angle"></figure>
+        <figure class="shuffle-card" data-label="Dictionary: map"><img loading="lazy" src="../img/molecular/v2-diccionario-mapa.jpg" alt="Dictionary as a concept map of chemical bonding"></figure>
+        <figure class="shuffle-card" data-label="History"><img loading="lazy" src="../img/molecular/v2-historial.jpg" alt="History with the notebook photos of methane and water"></figure>
+        <figure class="shuffle-card" data-label="Settings"><img loading="lazy" src="../img/molecular/v2-configuracion.jpg" alt="Settings with text size, clear history and help"></figure>
         <span class="shuffle-label"></span>
         <div class="shuffle-dots" aria-hidden="true"></div>
       </div>
@@ -165,6 +161,6 @@
   <footer>
     <a class="to-top" href="#">↑ Back to top</a>
   </footer>
-  <script src="../js/main.js?v=47"></script>
+  <script src="../js/main.js?v=48"></script>
 </body>
 </html>
