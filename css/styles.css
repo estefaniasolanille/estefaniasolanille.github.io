@@ -69,8 +69,13 @@ a { color: inherit; }
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--grid-major);
 }
-.logo { font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; text-decoration: none; color: var(--ink); }
-.logo-short { display: none; }
+.logo { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; text-decoration: none; color: var(--ink); }
+.logo-mark { height: 42px; width: auto; flex: none; overflow: visible; }
+.logo-mark .lm { fill: none; stroke-width: 12; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1s cubic-bezier(.6, 0, .3, 1) .2s forwards; }
+.logo-mark .e { stroke: #1C2536; }
+.logo-mark .s { stroke: #268BFB; animation-delay: .9s; }
+.logo-mark .guides { fill: none; stroke: var(--ink); stroke-width: 1px; vector-effect: non-scaling-stroke; opacity: 0; transition: opacity .3s; }
+.logo:hover .guides, .logo:focus-visible .guides { opacity: .35; }
 .topbar nav { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
 .topbar nav a {
   text-decoration: none; font-family: var(--font-deco); font-size: .88rem; text-transform: lowercase;
@@ -432,7 +437,7 @@ figcaption strong { color: var(--ink); }
   .topbar nav a { white-space: nowrap; font-size: .8rem; padding: 6px 8px; }
   .topbar nav a.lang { order: -1; margin: 0 6px 0 0; }
   .logo-full { display: none; }
-  .logo-short { display: inline; }
+  .logo-mark { height: 32px; }
   main { padding: 0 16px; }
   .section { padding-top: 72px; }
   .hero { padding: 64px 8px 24px; }
@@ -491,6 +496,6 @@ figcaption strong { color: var(--ink); }
   .js .reveal { transform: none; transition: opacity .7s ease; }
   .project:hover, .project:focus-visible, .next-project:hover { transform: none; }
   .project:hover .project-img img, .next-project:hover .game-case { transform: none; }
-  .desk .ln, .desk .paper, .desk .tint, .desk .dot, .name-card { animation: none; stroke-dashoffset: 0; opacity: 1; }
+  .desk .ln, .desk .paper, .desk .tint, .desk .dot, .name-card, .logo-mark .lm { animation: none; stroke-dashoffset: 0; opacity: 1; }
   .mark { transition: none; }
 }
