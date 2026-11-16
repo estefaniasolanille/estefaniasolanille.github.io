@@ -138,7 +138,6 @@ h3 { margin: 0 0 .3em; font-size: 1.15rem; }
 .desk .tint { fill: var(--tint); }
 .desk .hit { fill: transparent; }
 .desk .obj { cursor: pointer; outline: none; }
-.desk .screen { opacity: 0; transition: opacity .45s ease; }
 .desk .sk path {
   fill: none; stroke: var(--green); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round;
   stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .5s ease;
@@ -156,7 +155,6 @@ h3 { margin: 0 0 .3em; font-size: 1.15rem; }
 @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.8); } }
 .desk .obj:hover .ln, .desk .obj:focus-visible .ln { stroke: var(--green); stroke-width: 3; }
 .desk .obj:hover .tint, .desk .obj:focus-visible .tint { fill: #CDEFE2; }
-.desk .obj:hover .screen, .desk .obj:focus-visible .screen { opacity: 1; }
 .desk .obj:hover .x, .desk .obj:focus-visible .x { opacity: 0; }
 .desk .obj:hover .tag, .desk .obj:focus-visible .tag { opacity: 1; transform: none; }
 .name-card {
@@ -264,7 +262,6 @@ footer .to-top:hover { background: var(--ink); color: var(--paper); }
 .case-head .lead { font-size: 1.1rem; margin: 0 0 32px; }
 .case-head .lead a, .case-head dd a { color: var(--accent-ink); text-decoration-color: var(--accent); text-decoration-thickness: 2px; }
 .ficha { max-width: 680px; background: var(--surface); border: 2px solid var(--ink); }
-.ficha .clip { display: none; }
 .ficha-title {
   margin: 0; padding: 10px 16px; border-bottom: 2px solid var(--ink); background: var(--accent); color: var(--on-accent);
   font-family: var(--font-deco); font-size: .95rem; text-transform: lowercase;
