@@ -139,6 +139,11 @@ h3 { margin: 0 0 .3em; font-size: 1.15rem; }
 .desk .hit { fill: transparent; }
 .desk .obj { cursor: pointer; outline: none; }
 .desk .screen { opacity: 0; transition: opacity .45s ease; }
+.desk .sk path {
+  fill: none; stroke: var(--green); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .5s ease;
+}
+.desk .obj:hover .sk path, .desk .obj:focus-visible .sk path { stroke-dashoffset: 0; transition-delay: calc(var(--k) * 45ms); }
 .desk .tag { opacity: 0; transform: translateY(6px); transition: opacity .25s, transform .25s; pointer-events: none; }
 .desk .lead-line { stroke: var(--green); stroke-width: 2; stroke-dasharray: 6 6; fill: none; }
 .desk .tag-bg { fill: var(--green); }
