@@ -1,5 +1,5 @@
 :root {
-  --paper: #E6ECF6;
+  --paper: #F1EFEA;
   --surface: #FFFFFF;
   --ink: #16244F;
   --line-ink: #1F3B8C;
@@ -28,7 +28,7 @@
   --grid: color-mix(in srgb, var(--accent) 11%, transparent);
   --grid-major: color-mix(in srgb, var(--accent) 22%, transparent);
   --mat: color-mix(in srgb, var(--accent-ink) 34%, transparent);
-  --paper: color-mix(in srgb, var(--accent) 9%, #E9EDF3);
+  --paper: color-mix(in srgb, var(--accent) 6%, #F1EFEA);
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
@@ -147,12 +147,20 @@ h3 { margin: 0 0 .3em; font-size: 1.15rem; }
 .desk .lead-line { stroke: var(--green); stroke-width: 2; stroke-dasharray: 6 6; fill: none; }
 .desk .tag-bg { fill: var(--green); }
 .desk .tag text { fill: #FFFFFF; font-family: var(--font-deco); font-size: 24px; text-transform: lowercase; }
-.desk .dot {
-  fill: var(--green); opacity: 0; transform-box: fill-box; transform-origin: center;
-  animation: fade .4s ease forwards, pulse 2.4s ease-in-out infinite;
-  animation-delay: calc(var(--done) + .4s), calc(var(--done) + .8s);
+.desk .dot { fill: var(--green); opacity: 0; animation: fade .4s ease forwards; animation-delay: calc(var(--done) + .4s); }
+.desk .ring {
+  fill: none; stroke: var(--green); stroke-width: 3; opacity: 0; transform-box: fill-box; transform-origin: center;
+  animation: ripple 2.2s ease-out infinite; animation-delay: calc(var(--done) + .8s);
 }
-@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.8); } }
+@keyframes ripple { 0% { transform: scale(1); opacity: .9; } 100% { transform: scale(3.4); opacity: 0; } }
+.desk .obj { animation: glitch 9s steps(1) infinite; animation-delay: calc(var(--done) + 1.5s + var(--g) * 1.5s); }
+.desk .obj:hover, .desk .obj:focus-visible { animation: none; }
+@keyframes glitch {
+  0%, 96%, 98.6%, 100% { transform: none; filter: none; }
+  96.5% { transform: translate(5px, -3px); filter: drop-shadow(-5px 0 0 #14B57D) drop-shadow(5px 0 0 #2F6BFF); }
+  97.2% { transform: translate(-4px, 2px); filter: drop-shadow(4px 0 0 #2F6BFF); }
+  97.9% { transform: translate(3px, 0); filter: drop-shadow(-3px 0 0 #14B57D); }
+}
 .desk .obj:hover .ln, .desk .obj:focus-visible .ln { stroke: var(--green); stroke-width: 3; }
 .desk .obj:hover .tint, .desk .obj:focus-visible .tint { fill: #CDEFE2; }
 .desk .obj:hover .x, .desk .obj:focus-visible .x { opacity: 0; }
@@ -499,5 +507,6 @@ figcaption strong { color: var(--ink); }
   .project:hover, .project:focus-visible, .next-project:hover { transform: none; }
   .project:hover .project-img img, .next-project:hover .game-case { transform: none; }
   .desk .ln, .desk .paper, .desk .tint, .desk .dot, .name-card, .logo-mark .lm { animation: none; stroke-dashoffset: 0; opacity: 1; }
+  .desk .obj, .desk .ring { animation: none; }
   .mark { transition: none; }
 }
