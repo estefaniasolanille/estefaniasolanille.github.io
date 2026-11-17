@@ -303,10 +303,7 @@ figure { margin: 0; }
 figcaption { color: var(--muted); font-size: .85rem; margin-top: 8px; }
 figcaption strong { color: var(--ink); }
 .case-page figure > figcaption { font-family: var(--font-mono); font-size: .78rem; }
-.rounded, .demo-video, .gallery img, .concept-grid img {
-  width: 100%; height: auto; display: block; border: var(--rule); background: var(--surface);
-}
-.demo-video { background: #000; }
+.rounded, .demo-video, .gallery img, .demo-video { background: #000; }
 .taped { position: relative; }
 .case-page > .taped::before {
   content: ""; position: absolute; top: -9px; left: -9px; width: 18px; height: 18px;
@@ -326,13 +323,6 @@ figcaption strong { color: var(--ink); }
 .case-grid article { border-top: 4px solid var(--accent); padding-top: 14px; }
 .case-grid h3 { font-family: var(--font-title); font-weight: 600; }
 .case-grid p { color: var(--muted); font-size: .95rem; margin: 0; }
-.concept-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; counter-reset: concepto; }
-.concept-grid figure { counter-increment: concepto; }
-.concept-grid img { aspect-ratio: 3 / 2; object-fit: cover; }
-.concept-grid figcaption { margin-top: 10px; display: grid; gap: 4px; }
-.concept-grid figcaption strong { font-size: .95rem; line-height: 1.3; }
-.concept-grid figcaption strong::before { content: counter(concepto, decimal-leading-zero) " "; font-family: var(--font-mono); color: var(--accent-ink); }
-.concept-grid figcaption span { font-size: .85rem; }
 .bento { display: grid; grid-template-columns: 1fr 1.5fr; border: var(--rule); background: var(--surface); }
 .bento-text { padding: 28px; align-self: start; }
 .bento-text h2, .bento-text h3 { font-family: var(--font-title); font-weight: 600; margin: 0 0 .5em; }
@@ -479,8 +469,7 @@ figcaption strong { color: var(--ink); }
   .links.big a { font-size: .8rem; padding: 10px 14px; max-width: 100%; overflow-wrap: anywhere; }
   .page-case main { padding-top: 80px; }
   .gallery.three { grid-template-columns: 1fr; }
-  .concept-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
-  .shuffle { min-height: 300px; border-left: 0; border-top: var(--rule); }
+    .shuffle { min-height: 300px; border-left: 0; border-top: var(--rule); }
   .postit { float: none; display: block; width: auto; max-width: 280px; margin: 12px 0 20px; }
   .ficha-fields div, .ficha-checks { flex-wrap: wrap; }
   .ficha-fields dt, .ficha-label { flex-basis: 100%; border-right: 0; padding: 6px 16px 0; }
