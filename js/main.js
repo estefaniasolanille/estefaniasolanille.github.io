@@ -90,7 +90,7 @@ const STACK_POSITIONS = [
   'translate(-5%, -6%) rotate(-5deg)',
   'translate(0, -8%) rotate(2deg)',
 ];
-const STACK_LIGHT = [1, 0.75, 0.6, 0.45];
+const STACK_LIGHT = [1, 0.92, 0.85, 0.78];
 
 document.querySelectorAll('.shuffle').forEach((box) => {
   const cards = [...box.querySelectorAll('.shuffle-card')];
@@ -147,27 +147,30 @@ const nameCard = document.querySelector('.name-card');
 if (nameCard && !reduceMotion) {
   const lines = [nameCard.querySelector('h1'), nameCard.querySelector('.role')];
   const texts = lines.map((el) => el.textContent);
-  lines.forEach((el, n) => {
-    el.setAttribute('aria-label', texts[n]);
-    el.style.minHeight = `${el.offsetHeight}px`;
-    el.textContent = '';
-  });
+  lines[0].setAttribute('aria-label', texts[0]);
   lines[1].classList.add('empty');
-
-  let line = 0, i = 0;
-  setTimeout(function type() {
-    const el = lines[line];
-    el.classList.add('typing');
-    el.classList.remove('empty');
-    el.textContent = texts[line].slice(0, ++i);
-    if (i < texts[line].length) {
-      setTimeout(type, 55 + Math.random() * 70);
-    } else if (++line < lines.length) {
-      el.classList.remove('typing');
-      i = 0;
-      setTimeout(type, 350);
-    }
-  }, 700);
+  lines[0].style.visibility = 'hidden';
+  document.fonts.ready.then(() => {
+    lines.forEach((el) => {
+      el.style.minHeight = `${el.offsetHeight}px`;
+      el.textContent = '';
+    });
+    lines[0].style.visibility = '';
+    let line = 0, i = 0;
+    setTimeout(function type() {
+      const el = lines[line];
+      el.classList.add('typing');
+      el.classList.remove('empty');
+      el.textContent = texts[line].slice(0, ++i);
+      if (i < texts[line].length) {
+        setTimeout(type, 55 + Math.random() * 70);
+      } else if (++line < lines.length) {
+        el.classList.remove('typing');
+        i = 0;
+        setTimeout(type, 350);
+      }
+    }, 500);
+  });
 }
 
 const navLinks = document.querySelectorAll('.topbar nav a[href^="#"]');

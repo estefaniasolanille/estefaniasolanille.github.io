@@ -303,7 +303,10 @@ figure { margin: 0; }
 figcaption { color: var(--muted); font-size: .85rem; margin-top: 8px; }
 figcaption strong { color: var(--ink); }
 .case-page figure > figcaption { font-family: var(--font-mono); font-size: .78rem; }
-.rounded, .demo-video, .gallery img, .demo-video { background: #000; }
+.rounded, .demo-video, .gallery img {
+  width: 100%; height: auto; display: block; border: var(--rule); background: var(--surface);
+}
+.demo-video { background: #000; }
 .taped { position: relative; }
 .case-page > .taped::before {
   content: ""; position: absolute; top: -9px; left: -9px; width: 18px; height: 18px;
@@ -469,7 +472,7 @@ figcaption strong { color: var(--ink); }
   .links.big a { font-size: .8rem; padding: 10px 14px; max-width: 100%; overflow-wrap: anywhere; }
   .page-case main { padding-top: 80px; }
   .gallery.three { grid-template-columns: 1fr; }
-    .shuffle { min-height: 300px; border-left: 0; border-top: var(--rule); }
+  .shuffle { min-height: 300px; border-left: 0; border-top: var(--rule); }
   .postit { float: none; display: block; width: auto; max-width: 280px; margin: 12px 0 20px; }
   .ficha-fields div, .ficha-checks { flex-wrap: wrap; }
   .ficha-fields dt, .ficha-label { flex-basis: 100%; border-right: 0; padding: 6px 16px 0; }
